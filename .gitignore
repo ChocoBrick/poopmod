@@ -6,12 +6,13 @@
 *.ear
 *.cfg
 *.properties
-*.png
+
 *.info
 *.lzma
 net/
 paulscode/
 ibxm/
 cpw/
-assets/forge/
+assets.forge/
 *.cfg~
+
