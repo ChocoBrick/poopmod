@@ -24,7 +24,7 @@ public class BlockToilet extends Block
         {
                 super(id, material);
                 this.blockHardness = 4F;
-                this.blockResistance = 31F;
+                this.blockResistance = 30F;
                 this.powered = par2;
         }
 
