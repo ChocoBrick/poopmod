@@ -250,6 +250,18 @@ public class Anythinghonestly {
                 GameRegistry.addRecipe(new ItemStack(BlockPoopClean), "ppp", "ppp", "ppp",
                         'p', CleanPoopItem);
                 
+                GameRegistry.addRecipe(new ItemStack(BlockBirdPoop), "ppp", "ppp", "ppp",
+                        'p', ItemBirdPoop);
+
+                GameRegistry.addRecipe(new ItemStack(BlockBirdPoopClean), "ppp", "ppp", "ppp",
+                        'p', ItemBirdPoopClean);
+                
+                GameRegistry.addRecipe(new ItemStack(BlockManure), "ppp", "ppp", "ppp",
+                        'p', ItemManure);
+
+                GameRegistry.addRecipe(new ItemStack(BlockManureClean), "ppp", "ppp", "ppp",
+                        'p', ItemManureClean);
+                
                 GameRegistry.addRecipe(new ItemStack(PoopItem,9), "p",
                         'p', BlockPoop);
                 
@@ -290,6 +302,8 @@ public class Anythinghonestly {
                         'p', BlockPoopClean);
 
                 GameRegistry.addSmelting(PoopItem.itemID, new ItemStack(CleanPoopItem), 5f);
+                GameRegistry.addSmelting(ItemBirdPoop.itemID, new ItemStack(ItemBirdPoopClean), 5f);
+                GameRegistry.addSmelting(ItemManure.itemID, new ItemStack(ItemManureClean), 5f);
                 
                 EntityRegistry.registerModEntity(EntityPoopball.class, "Poopball", 1, instance, 120, 3, true);
 
