@@ -49,6 +49,8 @@ public class Anythinghonestly {
                     return new ItemStack(PoopItem, 1, 0);
             }
     };
+    
+    //hurray alex is on!
 
     static Item PoopItem;
     static Item CleanPoopItem;
@@ -74,6 +76,10 @@ public class Anythinghonestly {
     
     static EnumToolMaterial toolPoop;
     static EnumArmorMaterial armorPoop;
+    static EnumToolMaterial toolBirdPoop;
+    static EnumArmorMaterial armorBirdPoop;
+    static EnumToolMaterial toolManurePoop;
+    static EnumArmorMaterial armorManurePoop;
     
     static Block toilet;
     static Block BlockPoop;
@@ -96,49 +102,73 @@ public class Anythinghonestly {
 
         	configFile.load();
 
+        	//blocks
             int toiletId = configFile.get(Configuration.CATEGORY_BLOCK, "Toilet Block", 2460).getInt();
             int BlockPoopId = configFile.get(Configuration.CATEGORY_BLOCK, "Poop Block", 2461).getInt();
             int BlockPoopCleanId = configFile.get(Configuration.CATEGORY_BLOCK, "'Sanitized' Poop Block", 2462).getInt();
+            int BlockBirdPoopId = configFile.get(Configuration.CATEGORY_BLOCK, "Bird Poop Block", 2463).getInt();
+            int BlockBirdPoopCleanId = configFile.get(Configuration.CATEGORY_BLOCK, "'Sanitized' Bird Poop Block", 2464).getInt();
+            int BlockManureId = configFile.get(Configuration.CATEGORY_BLOCK, "Manure Block", 2465).getInt();
+            int BlockManureClean = configFile.get(Configuration.CATEGORY_BLOCK, "'Sanitized' Manure Block", 2466).getInt();
 
+            //poop items
             int PoopId = configFile.getItem("Poop", 5000).getInt();
             int CleanPoopId = configFile.getItem("'Sanitized' Poop", 5001).getInt();
             int PoopballId = configFile.getItem("Poopball", 5002).getInt();
+            int BirdPoopId = configFile.getItem("Bird Poop", 5003).getInt();
+            int CleanBirdPoopId = configFile.getItem("Sanitized Bird Poop", 5004).getInt();
+            int ManureId = configFile.getItem("Manure", 5005).getInt();
+            int CleanManureId = configFile.getItem("Sanitized Manure", 5006).getInt();
             
-            int shovelPoopId = configFile.getItem("Poop Shovel", 5003).getInt();
-            int pickaxePoopId = configFile.getItem("Poop Pickaxe", 5004).getInt();
-            int axePoopId = configFile.getItem("Poop Axe", 5005).getInt();
-            int swordPoopId = configFile.getItem("Poop Sword", 5006).getInt();
-            int hoePoopId = configFile.getItem("Poop Hoe", 5007).getInt();
+            //tools
+            int shovelPoopId = configFile.getItem("Poop Shovel", 5020).getInt();
+            int pickaxePoopId = configFile.getItem("Poop Pickaxe", 5021).getInt();
+            int axePoopId = configFile.getItem("Poop Axe", 5022).getInt();
+            int swordPoopId = configFile.getItem("Poop Sword", 5023).getInt();
+            int hoePoopId = configFile.getItem("Poop Hoe", 5024).getInt();
             
-            int helmetPoopId = configFile.getItem("Poop Helmet", 5008).getInt();
-            int platePoopId = configFile.getItem("Poop Plate", 5009).getInt();
-            int legsPoopId = configFile.getItem("Poop Leggings", 5010).getInt();
-            int bootsPoopId = configFile.getItem("Poop Boots", 5011).getInt();
+            //armor
+            int helmetPoopId = configFile.getItem("Poop Helmet", 5025).getInt();
+            int platePoopId = configFile.getItem("Poop Plate", 5026).getInt();
+            int legsPoopId = configFile.getItem("Poop Leggings", 5027).getInt();
+            int bootsPoopId = configFile.getItem("Poop Boots", 5028).getInt();
 
             configFile.save();
             
+            //Tool Enums
             toolPoop = net.minecraftforge.common.EnumHelper.addToolMaterial("POOP", 2, 64, 18F, 1, 4);
+            toolBirdPoop = net.minecraftforge.common.EnumHelper.addToolMaterial("BIRDPOOP", 2, 64, 18F, 1, 4);
+            toolManurePoop = net.minecraftforge.common.EnumHelper.addToolMaterial("COWPOOP", 2, 64, 18F, 1, 4);
+            
+            //Armour Enums
             armorPoop = net.minecraftforge.common.EnumHelper.addArmorMaterial("POOP", 64, new int[] {2, 7, 5, 3}, 4);
+            armorBirdPoop = net.minecraftforge.common.EnumHelper.addArmorMaterial("BIRDPOOP", 64, new int[] {2, 7, 5, 3}, 4); 
+            armorManurePoop = net.minecraftforge.common.EnumHelper.addArmorMaterial("COWPOOP", 64, new int[] {2, 7, 5, 3}, 4);
 
+            //Items
             PoopItem = new ItemPoop(PoopId, 3, 1.2F, true).setAlwaysEdible().setUnlocalizedName("poopI").setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop");
             CleanPoopItem  = new ItemCleanPoop(CleanPoopId, 6, 1.2F, true).setAlwaysEdible().setUnlocalizedName("cleanpoopI").setCreativeTab(tabkrebs).setTextureName("krebsmodid:cleanpoop");
             ItemPoopball  = new ItemPoopball(PoopballId, 20, 1.2F, true).setUnlocalizedName("poopballI").setCreativeTab(tabkrebs).setTextureName("krebsmodid:poopball");
             
+            //Tools
             shovelPoop = (new ItemSpade(shovelPoopId, toolPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_shovel").setUnlocalizedName("phovelpoop");
             pickaxePoop = (new ItemPickaxe(pickaxePoopId, toolPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_pickaxe").setUnlocalizedName("pickpoop");
             axePoop = (new ItemAxe(axePoopId, toolPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_axe").setUnlocalizedName("axepoop");
             swordPoop = (new ItemSword(swordPoopId, toolPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_sword").setUnlocalizedName("swordpoop");
             hoePoop = (new ItemHoe(hoePoopId, toolPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_hoe").setUnlocalizedName("hoepoop");
             
+            //Armor
             helmetPoop = (new PoopArmor(helmetPoopId, armorPoop, 3, 0)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_helmet").setUnlocalizedName("helmetpoop");
             platePoop = (new PoopArmor(platePoopId, armorPoop, 3, 1)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_chestplate").setUnlocalizedName("platepoop");
             legsPoop = (new PoopArmor(legsPoopId, armorPoop, 3, 2)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_leggings").setUnlocalizedName("legspoop");
             bootsPoop = (new PoopArmor(bootsPoopId, armorPoop, 3, 3)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_boots").setUnlocalizedName("bootspoop");
             
+            //Blocks
             toilet = new BlockToilet(toiletId, Material.iron, false).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("toilet").setCreativeTab(tabkrebs);
             BlockPoop = new BlockPoop(BlockPoopId, Material.ground).setStepSound(Block.soundSandFootstep).setUnlocalizedName("poopblock").setCreativeTab(tabkrebs).setTextureName("krebsmodid:poopblock");
             BlockPoopClean = new BlockPoop(BlockPoopCleanId, Material.ground).setStepSound(Block.soundSandFootstep).setUnlocalizedName("cleanpoopblock").setCreativeTab(tabkrebs).setTextureName("krebsmodid:poopblockclean");
 
+            //Achivements
             eatShitAchieve = new Achievement(1500, "eatShitAchieve", 1, -6, PoopItem, AchievementList.buildWorkBench).registerAchievement();
             eatCleanShitAchieve = new Achievement(1501, "eatCleanShitAchieve", -1, -6, CleanPoopItem, eatShitAchieve).registerAchievement();
         }
@@ -172,9 +202,9 @@ public class Anythinghonestly {
                 LanguageRegistry.instance().addStringLocalization("achievement.eatCleanShitAchieve.desc", "en_US", "That's still disgusting.");
                 LanguageRegistry.instance().addStringLocalization("itemGroup.tabkrebs", "en_US", "Poop Mod");
 
-                GameRegistry.registerBlock(toilet);
-                GameRegistry.registerBlock(BlockPoop);
-                GameRegistry.registerBlock(BlockPoopClean)
+                GameRegistry.registerBlock(toilet, toilet.getUnlocalizedName());
+                GameRegistry.registerBlock(BlockPoop, BlockPoop.getUnlocalizedName());
+                GameRegistry.registerBlock(BlockPoopClean, BlockPoopClean.getUnlocalizedName())
                 ;
                 MinecraftForge.setBlockHarvestLevel(toilet, "pickaxe", 1);
                 MinecraftForge.setBlockHarvestLevel(BlockPoop, "shovel", 1);
