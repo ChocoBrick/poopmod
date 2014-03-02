@@ -80,6 +80,8 @@ public class Anythinghonestly {
     static EnumArmorMaterial armorBirdPoop;
     static EnumToolMaterial toolManurePoop;
     static EnumArmorMaterial armorManurePoop;
+    static EnumToolMaterial toolUltimatePoop;
+    static EnumArmorMaterial armoUltimatePoop;
     
     static Block toilet;
     static Block BlockPoop;
@@ -90,7 +92,6 @@ public class Anythinghonestly {
     static Block BlockManure;
     static Block BlockManureClean;
     
-
     static Achievement eatShitAchieve;
     static Achievement eatCleanShitAchieve;
 
@@ -137,19 +138,18 @@ public class Anythinghonestly {
             
             //Tool Enums
             toolPoop = net.minecraftforge.common.EnumHelper.addToolMaterial("POOP", 2, 64, 18F, 1, 4);
-            toolBirdPoop = net.minecraftforge.common.EnumHelper.addToolMaterial("BIRDPOOP", 2, 64, 18F, 1, 4);
-            toolManurePoop = net.minecraftforge.common.EnumHelper.addToolMaterial("COWPOOP", 2, 64, 18F, 1, 4);
+            toolBirdPoop = net.minecraftforge.common.EnumHelper.addToolMaterial("BIRDPOOP", 2, 60, 17F, 1, 4);
+            toolManurePoop = net.minecraftforge.common.EnumHelper.addToolMaterial("COWPOOP", 2, 62, 17F, 1, 4);
             
             //Armour Enums
             armorPoop = net.minecraftforge.common.EnumHelper.addArmorMaterial("POOP", 64, new int[] {2, 7, 5, 3}, 4);
-            armorBirdPoop = net.minecraftforge.common.EnumHelper.addArmorMaterial("BIRDPOOP", 64, new int[] {2, 7, 5, 3}, 4); 
-            armorManurePoop = net.minecraftforge.common.EnumHelper.addArmorMaterial("COWPOOP", 64, new int[] {2, 7, 5, 3}, 4);
+            armorBirdPoop = net.minecraftforge.common.EnumHelper.addArmorMaterial("BIRDPOOP", 64, new int[] {3, 6, 6, 2}, 4); 
+            armorManurePoop = net.minecraftforge.common.EnumHelper.addArmorMaterial("COWPOOP", 64, new int[] {1, 8, 4, 4}, 4);
 
             //Items
+            ItemPoopball = new ItemPoopball(PoopballId, 1, 1, true).setUnlocalizedName("poopball").setCreativeTab(tabkrebs).setTextureName("krebsmodid:poopball");
             PoopItem = new ItemPoop(PoopId, 3, 1.2F, true).setAlwaysEdible().setUnlocalizedName("poopI").setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop");
             CleanPoopItem  = new ItemCleanPoop(CleanPoopId, 6, 1.2F, true).setAlwaysEdible().setUnlocalizedName("cleanpoopI").setCreativeTab(tabkrebs).setTextureName("krebsmodid:cleanpoop");
-            ItemPoopball  = new ItemPoopball(PoopballId, 20, 1.2F, true).setUnlocalizedName("poopballI").setCreativeTab(tabkrebs).setTextureName("krebsmodid:poopball");
-            
             ItemBirdPoop = new ItemPoop(BirdPoopId, 1, 1.2F, true).setAlwaysEdible().setUnlocalizedName("BpoopI").setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoop");
             ItemBirdPoopClean = new ItemPoop(CleanBirdPoopId, 2, 1.2F, true).setAlwaysEdible().setUnlocalizedName("BCpoopI").setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoopcleani");
             ItemManure = new ItemPoop(ManureId, 2, 1.2F, true).setAlwaysEdible().setUnlocalizedName("CpoopI").setCreativeTab(tabkrebs).setTextureName("krebsmodid:cowpoop");
@@ -172,10 +172,8 @@ public class Anythinghonestly {
             toilet = new BlockToilet(toiletId, Material.iron, false).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("toilet").setCreativeTab(tabkrebs);
             BlockPoop = new BlockPoop(BlockPoopId, Material.ground).setStepSound(Block.soundSandFootstep).setUnlocalizedName("poopblock").setCreativeTab(tabkrebs).setTextureName("krebsmodid:poopblock");
             BlockPoopClean = new BlockPoop(BlockPoopCleanId, Material.ground).setStepSound(Block.soundSandFootstep).setUnlocalizedName("cleanpoopblock").setCreativeTab(tabkrebs).setTextureName("krebsmodid:poopblockclean");
-            
             BlockBirdPoop = new BlockPoop(BlockBirdPoopId, Material.ground).setStepSound(Block.soundSandFootstep).setUnlocalizedName("poopbirdblock").setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoop");
             BlockBirdPoopClean = new BlockPoop(BlockBirdPoopCleanId, Material.ground).setStepSound(Block.soundSandFootstep).setUnlocalizedName("cleanpoopbirdblock").setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoopclean");
-            
             BlockManure = new BlockPoop(BlockManureId, Material.ground).setStepSound(Block.soundSandFootstep).setUnlocalizedName("manureblock").setCreativeTab(tabkrebs).setTextureName("krebsmodid:cowpoop");
             BlockManureClean = new BlockPoop(BlockManureCleanId, Material.ground).setStepSound(Block.soundSandFootstep).setUnlocalizedName("manureblockclean").setCreativeTab(tabkrebs).setTextureName("krebsmodid:cowpoopclean");
 
