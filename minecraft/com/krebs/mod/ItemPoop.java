@@ -17,12 +17,16 @@ public class ItemPoop extends ItemFood {
         public void onFoodEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
         {
             super.onFoodEaten(par1ItemStack, par2World, par3EntityPlayer);
-            if (!par2World.isRemote)
-            {
-                par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.hunger.id, 600, 3));
-                par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.confusion.id, 600, 3));
-                par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.poison.id, 600, 3));
-                par3EntityPlayer.addStat(Anythinghonestly.eatShitAchieve, 1);
-            }
+            
+        	if((this == Anythinghonestly.PoopItem) || (this == Anythinghonestly.ItemBirdPoop) || (this == Anythinghonestly.ItemManure)){
+
+            	if (!par2World.isRemote)
+            	{
+            		par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.hunger.id, 600, 3));
+            		par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.confusion.id, 600, 3));
+            		par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.poison.id, 600, 3));
+            		par3EntityPlayer.addStat(Anythinghonestly.eatShitAchieve, 1);
+            	}
+        	}
         }
 }
