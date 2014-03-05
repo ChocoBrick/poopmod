@@ -61,11 +61,27 @@ public class Anythinghonestly {
     static Item ItemManure;
     static Item ItemManureClean;
     
+    //tools
+    //poop tools
     static Item shovelPoop;
     static Item pickaxePoop;
     static Item axePoop;
     static Item swordPoop; 
     static Item hoePoop;
+    
+    //bird poop tools
+    static Item shovelBirdPoop;
+    static Item pickaxeBirdPoop;
+    static Item axeBirdPoop;
+    static Item swordBirdPoop; 
+    static Item hoeBirdPoop;
+    
+    //cow poop tools
+    static Item shovelManure;
+    static Item pickaxeManure;
+    static Item axeManure;
+    static Item swordManure; 
+    static Item hoeManure;
     
     static Item helmetPoop;
     static Item platePoop;
@@ -128,11 +144,17 @@ public class Anythinghonestly {
             int swordPoopId = configFile.getItem("Poop Sword", 5023).getInt();
             int hoePoopId = configFile.getItem("Poop Hoe", 5024).getInt();
             
+            int shovelBirdPoopId = configFile.getItem("Bird Poop Shovel", 5025).getInt();
+            int pickaxeBirdPoopId = configFile.getItem("Bird Poop Pickaxe", 5026).getInt();
+            int axeBirdPoopId = configFile.getItem("Bird Poop Axe", 5027).getInt();
+            int swordBirdPoopId = configFile.getItem("Bird Poop Sword", 5028).getInt();
+            int hoeBirdPoopId = configFile.getItem("Bird Poop Hoe", 5029).getInt();
+            
             //armor
-            int helmetPoopId = configFile.getItem("Poop Helmet", 5025).getInt();
-            int platePoopId = configFile.getItem("Poop Plate", 5026).getInt();
-            int legsPoopId = configFile.getItem("Poop Leggings", 5027).getInt();
-            int bootsPoopId = configFile.getItem("Poop Boots", 5028).getInt();
+            int helmetPoopId = configFile.getItem("Poop Helmet", 5035).getInt();
+            int platePoopId = configFile.getItem("Poop Plate", 5036).getInt();
+            int legsPoopId = configFile.getItem("Poop Leggings", 5037).getInt();
+            int bootsPoopId = configFile.getItem("Poop Boots", 5038).getInt();
 
             configFile.save();
             
