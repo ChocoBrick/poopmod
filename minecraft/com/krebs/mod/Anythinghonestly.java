@@ -51,17 +51,19 @@ public class Anythinghonestly {
     };
     
     //hurray alex is on!
+    
+    String WordPoop = "Poop";
+    Boolean isVulgar;
 
     static Item PoopItem;
     static Item CleanPoopItem;
-    static Item ItemPoopball;
-    
     static Item ItemBirdPoop;
     static Item ItemBirdPoopClean;
     static Item ItemManure;
     static Item ItemManureClean;
+    static Item ItemPoopball;
     
-    //tools
+//tools
     //poop tools
     static Item shovelPoop;
     static Item pickaxePoop;
@@ -83,10 +85,24 @@ public class Anythinghonestly {
     static Item swordManure; 
     static Item hoeManure;
     
+//armor
+    //poop
     static Item helmetPoop;
     static Item platePoop;
     static Item legsPoop;
     static Item bootsPoop;
+    
+    //bird
+    static Item helmetBirdPoop;
+    static Item plateBirdPoop;
+    static Item legsBirdPoop;
+    static Item bootsBirdPoop;
+    
+    //cow
+    static Item helmetManure;
+    static Item plateManure;
+    static Item legsManure;
+    static Item bootsManure;
     
     static Entity EntityPoopball;
     
@@ -97,7 +113,7 @@ public class Anythinghonestly {
     static EnumToolMaterial toolManurePoop;
     static EnumArmorMaterial armorManurePoop;
     static EnumToolMaterial toolUltimatePoop;
-    static EnumArmorMaterial armoUltimatePoop;
+    static EnumArmorMaterial armorUltimatePoop;
     
     static Block toilet;
     static Block BlockPoop;
@@ -118,6 +134,8 @@ public class Anythinghonestly {
         	Configuration configFile = new Configuration(event.getSuggestedConfigurationFile());
 
         	configFile.load();
+        	
+        	 isVulgar = configFile.get(Configuration.CATEGORY_GENERAL, "Use vulgar language?", false).getBoolean(false);
 
         	//blocks
             int toiletId = configFile.get(Configuration.CATEGORY_BLOCK, "Toilet Block", 2460).getInt();
@@ -150,23 +168,45 @@ public class Anythinghonestly {
             int swordBirdPoopId = configFile.getItem("Bird Poop Sword", 5028).getInt();
             int hoeBirdPoopId = configFile.getItem("Bird Poop Hoe", 5029).getInt();
             
+            int shovelManureId = configFile.getItem("Manure Shovel", 5030).getInt();
+            int pickaxeManureId = configFile.getItem("Manure Pickaxe", 5031).getInt();
+            int axeManureId = configFile.getItem("Manure Axe", 5032).getInt();
+            int swordManureId = configFile.getItem("Manure Sword", 5033).getInt();
+            int hoeManureId = configFile.getItem("Manure Hoe", 5034).getInt();
+            
             //armor
-            int helmetPoopId = configFile.getItem("Poop Helmet", 5035).getInt();
-            int platePoopId = configFile.getItem("Poop Plate", 5036).getInt();
-            int legsPoopId = configFile.getItem("Poop Leggings", 5037).getInt();
-            int bootsPoopId = configFile.getItem("Poop Boots", 5038).getInt();
+            int helmetPoopId = configFile.getItem("Poop Helmet", 5045).getInt();
+            int platePoopId = configFile.getItem("Poop Plate", 5046).getInt();
+            int legsPoopId = configFile.getItem("Poop Leggings", 5047).getInt();
+            int bootsPoopId = configFile.getItem("Poop Boots", 5048).getInt();
+            
+            int helmetBirdPoopId = configFile.getItem("Bird Poop Helmet", 5049).getInt();
+            int plateBirdPoopId = configFile.getItem("Bird Poop Plate", 5050).getInt();
+            int legsBirdPoopId = configFile.getItem("Bird Poop Leggings", 5051).getInt();
+            int bootsBirdPoopId = configFile.getItem("Bird Poop Boots", 5052).getInt();
+            
+            int helmetManureId = configFile.getItem("Manure Helmet", 5053).getInt();
+            int plateManureId = configFile.getItem("Manure Plate", 5054).getInt();
+            int legsManureId = configFile.getItem("Manure Leggings", 5055).getInt();
+            int bootsManureId = configFile.getItem("Manure Boots", 5056).getInt();
 
             configFile.save();
+            
+            if(isVulgar == true){
+            	WordPoop = "Shit";	
+            }
             
             //Tool Enums
             toolPoop = net.minecraftforge.common.EnumHelper.addToolMaterial("POOP", 2, 64, 18F, 1, 4);
             toolBirdPoop = net.minecraftforge.common.EnumHelper.addToolMaterial("BIRDPOOP", 2, 60, 17F, 1, 4);
             toolManurePoop = net.minecraftforge.common.EnumHelper.addToolMaterial("COWPOOP", 2, 62, 17F, 1, 4);
+            toolUltimatePoop = net.minecraftforge.common.EnumHelper.addToolMaterial("SUPERPOOP", 2, 512, 25F, 1, 4);
             
             //Armour Enums
             armorPoop = net.minecraftforge.common.EnumHelper.addArmorMaterial("POOP", 64, new int[] {2, 7, 5, 3}, 4);
             armorBirdPoop = net.minecraftforge.common.EnumHelper.addArmorMaterial("BIRDPOOP", 64, new int[] {3, 6, 6, 2}, 4); 
             armorManurePoop = net.minecraftforge.common.EnumHelper.addArmorMaterial("COWPOOP", 64, new int[] {1, 8, 4, 4}, 4);
+            armorUltimatePoop = net.minecraftforge.common.EnumHelper.addArmorMaterial("SUPERPOOP", 512, new int[] {4, 5, 4, 4}, 4);
 
             //Items
             ItemPoopball = new ItemPoopball(PoopballId, 1, 1, true).setUnlocalizedName("poopball").setCreativeTab(tabkrebs).setTextureName("krebsmodid:poopball");
@@ -178,17 +218,40 @@ public class Anythinghonestly {
             ItemManureClean = new ItemPoop(CleanManureId, 4, 1.2F, true).setAlwaysEdible().setUnlocalizedName("CCpoopI").setCreativeTab(tabkrebs).setTextureName("krebsmodid:cowpoopclean");
             
             //Tools
-            shovelPoop = (new ItemSpade(shovelPoopId, toolPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_shovel").setUnlocalizedName("phovelpoop");
+            shovelPoop = (new ItemSpade(shovelPoopId, toolPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_shovel").setUnlocalizedName("shovelpoop");
             pickaxePoop = (new ItemPickaxe(pickaxePoopId, toolPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_pickaxe").setUnlocalizedName("pickpoop");
             axePoop = (new ItemAxe(axePoopId, toolPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_axe").setUnlocalizedName("axepoop");
             swordPoop = (new ItemSword(swordPoopId, toolPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_sword").setUnlocalizedName("swordpoop");
             hoePoop = (new ItemHoe(hoePoopId, toolPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_hoe").setUnlocalizedName("hoepoop");
+            
+            shovelBirdPoop = (new ItemSpade(shovelBirdPoopId, toolBirdPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoop_shovel").setUnlocalizedName("Bshovelpoop");
+            pickaxeBirdPoop = (new ItemPickaxe(pickaxeBirdPoopId, toolBirdPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoop_pickaxe").setUnlocalizedName("Bpickpoop");
+            axeBirdPoop = (new ItemAxe(axeBirdPoopId, toolBirdPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoop_axe").setUnlocalizedName("Baxepoop");
+            swordBirdPoop = (new ItemSword(swordBirdPoopId, toolBirdPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoop_sword").setUnlocalizedName("Bswordpoop");
+            hoeBirdPoop = (new ItemHoe(hoeBirdPoopId, toolBirdPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoop_hoe").setUnlocalizedName("Bhoepoop");
+            
+            shovelManure = (new ItemSpade(shovelManureId, toolManurePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_shovel").setUnlocalizedName("Mshovelpoop");
+            pickaxeManure = (new ItemPickaxe(pickaxeManureId, toolManurePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_pickaxe").setUnlocalizedName("Mpickpoop");
+            axeManure = (new ItemAxe(axeManureId, toolManurePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_axe").setUnlocalizedName("Maxepoop");
+            swordManure = (new ItemSword(swordManureId, toolManurePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_sword").setUnlocalizedName("Mswordpoop");
+            hoeManure = (new ItemHoe(hoeManureId, toolManurePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_hoe").setUnlocalizedName("Mhoepoop");
+            
             
             //Armor
             helmetPoop = (new PoopArmor(helmetPoopId, armorPoop, 3, 0)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_helmet").setUnlocalizedName("helmetpoop");
             platePoop = (new PoopArmor(platePoopId, armorPoop, 3, 1)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_chestplate").setUnlocalizedName("platepoop");
             legsPoop = (new PoopArmor(legsPoopId, armorPoop, 3, 2)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_leggings").setUnlocalizedName("legspoop");
             bootsPoop = (new PoopArmor(bootsPoopId, armorPoop, 3, 3)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_boots").setUnlocalizedName("bootspoop");
+            
+            helmetBirdPoop = (new PoopArmor(helmetBirdPoopId, armorBirdPoop, 3, 0)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoop_helmet").setUnlocalizedName("Bhelmetpoop");
+            plateBirdPoop = (new PoopArmor(plateBirdPoopId, armorBirdPoop, 3, 1)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoop_chestplate").setUnlocalizedName("Bplatepoop");
+            legsBirdPoop = (new PoopArmor(legsBirdPoopId, armorBirdPoop, 3, 2)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoop_leggings").setUnlocalizedName("Blegspoop");
+            bootsBirdPoop = (new PoopArmor(bootsBirdPoopId, armorBirdPoop, 3, 3)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoop_boots").setUnlocalizedName("Bbootspoop");
+            
+            helmetManure = (new PoopArmor(helmetManureId, armorManurePoop, 3, 0)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_helmet").setUnlocalizedName("Mhelmetpoop");
+            plateManure = (new PoopArmor(plateManureId, armorManurePoop, 3, 1)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_chestplate").setUnlocalizedName("Mplatepoop");
+            legsManure = (new PoopArmor(legsManureId, armorManurePoop, 3, 2)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_leggings").setUnlocalizedName("Mlegspoop");
+            bootsManure = (new PoopArmor(bootsManureId, armorManurePoop, 3, 3)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_boots").setUnlocalizedName("Mbootspoop");
             
             //Blocks
             toilet = new BlockToilet(toiletId, Material.iron, false).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("toilet").setCreativeTab(tabkrebs);
@@ -209,40 +272,56 @@ public class Anythinghonestly {
         public void load(FMLInitializationEvent event) {
                 proxy.registerRenderers();
 
-                LanguageRegistry.addName(PoopItem,"Poop");
-                LanguageRegistry.addName(CleanPoopItem, "'Sanitized' Poop");
-                
-                LanguageRegistry.addName(ItemBirdPoop,"Bird Poop");
-                LanguageRegistry.addName(ItemBirdPoopClean, "'Sanitized' Bird Poop");
+                LanguageRegistry.addName(PoopItem, WordPoop);
+                LanguageRegistry.addName(CleanPoopItem, "'Sanitized' " + WordPoop);
+                LanguageRegistry.addName(ItemBirdPoop,"Bird " + WordPoop);
+                LanguageRegistry.addName(ItemBirdPoopClean, "'Sanitized' Bird " + WordPoop);
                 LanguageRegistry.addName(ItemManure,"Manure");
                 LanguageRegistry.addName(ItemManureClean, "'Sanitized' Manure");
-                
-                LanguageRegistry.addName(ItemPoopball, "Poopball");
+                LanguageRegistry.addName(ItemPoopball,  WordPoop + "ball");
                 
                 LanguageRegistry.addName(toilet,"Toilet");
-                LanguageRegistry.addName(BlockPoop,"Poop Block");
-                LanguageRegistry.addName(BlockPoopClean, "'Sanitized' Poop Block");
-                LanguageRegistry.addName(BlockBirdPoop,"Bird Poop Block");
-                LanguageRegistry.addName(BlockBirdPoopClean, "'Sanitized' Bird Poop Block");
+                LanguageRegistry.addName(BlockPoop, WordPoop + " Block");
+                LanguageRegistry.addName(BlockPoopClean, "'Sanitized' " + WordPoop + " Block");
+                LanguageRegistry.addName(BlockBirdPoop,"Bird " + WordPoop + " Block");
+                LanguageRegistry.addName(BlockBirdPoopClean, "'Sanitized' Bird " + WordPoop + " Block");
                 LanguageRegistry.addName(BlockManure,"Manure Block");
                 LanguageRegistry.addName(BlockManureClean, "'Sanitized' Manure Block");
                 
-                LanguageRegistry.addName(shovelPoop, "Poop Shovel");
-                LanguageRegistry.addName(pickaxePoop, "Poop Pickaxe");
-                LanguageRegistry.addName(axePoop, "Poop Axe");
-                LanguageRegistry.addName(swordPoop, "Poop Sword");
-                LanguageRegistry.addName(hoePoop, "Poop Hoe");
+                LanguageRegistry.addName(shovelPoop, WordPoop + " Shovel");
+                LanguageRegistry.addName(pickaxePoop, WordPoop + " Pickaxe");
+                LanguageRegistry.addName(axePoop, WordPoop + " Axe");
+                LanguageRegistry.addName(swordPoop, WordPoop + " Sword");
+                LanguageRegistry.addName(hoePoop, WordPoop + " Hoe");
+                LanguageRegistry.addName(shovelBirdPoop, "Bird " + WordPoop + " Shovel");
+                LanguageRegistry.addName(pickaxeBirdPoop, "Bird " + WordPoop + " Pickaxe");
+                LanguageRegistry.addName(axeBirdPoop, "Bird " + WordPoop + " Axe");
+                LanguageRegistry.addName(swordBirdPoop, "Bird " + WordPoop + " Sword");
+                LanguageRegistry.addName(hoeBirdPoop, "Bird " + WordPoop + " Hoe");
+                LanguageRegistry.addName(shovelManure, "Manure Shovel");
+                LanguageRegistry.addName(pickaxeManure, "Manure Pickaxe");
+                LanguageRegistry.addName(axeManure, "Manure Axe");
+                LanguageRegistry.addName(swordManure, "Manure Sword");
+                LanguageRegistry.addName(hoeManure, "Manure Hoe");
                 
-                LanguageRegistry.addName(helmetPoop, "Poop Helmet");
-                LanguageRegistry.addName(platePoop, "Poop Chestplate");
-                LanguageRegistry.addName(legsPoop, "Poop Leggings");
-                LanguageRegistry.addName(bootsPoop, "Poop Boots");
+                LanguageRegistry.addName(helmetPoop, WordPoop + " Helmet");
+                LanguageRegistry.addName(platePoop, WordPoop + " Chestplate");
+                LanguageRegistry.addName(legsPoop, WordPoop + " Leggings");
+                LanguageRegistry.addName(bootsPoop, WordPoop + " Boots");
+                LanguageRegistry.addName(helmetBirdPoop, "Bird " + WordPoop + " Helmet");
+                LanguageRegistry.addName(plateBirdPoop, "Bird " + WordPoop + " Chestplate");
+                LanguageRegistry.addName(legsBirdPoop, "Bird " + WordPoop + " Leggings");
+                LanguageRegistry.addName(bootsBirdPoop, "Bird " + WordPoop + " Boots");
+                LanguageRegistry.addName(helmetManure, "Manure Helmet");
+                LanguageRegistry.addName(plateManure, "Manure Chestplate");
+                LanguageRegistry.addName(legsManure, "Manure Leggings");
+                LanguageRegistry.addName(bootsManure, "Manure Boots");
 
-                LanguageRegistry.instance().addStringLocalization("achievement.eatShitAchieve", "en_US", "Got Poop!");
+                LanguageRegistry.instance().addStringLocalization("achievement.eatShitAchieve", "en_US", "Got " + WordPoop);
                 LanguageRegistry.instance().addStringLocalization("achievement.eatShitAchieve.desc", "en_US", "You fool! What's wrong with you!!!");
-                LanguageRegistry.instance().addStringLocalization("achievement.eatCleanShitAchieve", "en_US", "Got 'Clean' Poop!");
+                LanguageRegistry.instance().addStringLocalization("achievement.eatCleanShitAchieve", "en_US", "Got 'Clean' " + WordPoop + " !");
                 LanguageRegistry.instance().addStringLocalization("achievement.eatCleanShitAchieve.desc", "en_US", "That's still disgusting.");
-                LanguageRegistry.instance().addStringLocalization("itemGroup.tabkrebs", "en_US", "Poop Mod");
+                LanguageRegistry.instance().addStringLocalization("itemGroup.tabkrebs", "en_US", WordPoop + " Mod");
 
                 GameRegistry.registerBlock(toilet, toilet.getUnlocalizedName());
                 GameRegistry.registerBlock(BlockPoop, BlockPoop.getUnlocalizedName());
@@ -309,6 +388,36 @@ public class Anythinghonestly {
                 GameRegistry.addRecipe(new ItemStack(hoePoop), "pp ", " s ", " s ",
                         'p', BlockPoopClean, 's', Item.stick);
                 
+                GameRegistry.addRecipe(new ItemStack(shovelBirdPoop), "p", "s", "s",
+                        'p', BlockBirdPoopClean, 's', Item.stick);
+                
+                GameRegistry.addRecipe(new ItemStack(pickaxeBirdPoop), "ppp", " s ", " s ",
+                        'p', BlockBirdPoopClean, 's', Item.stick);
+                
+                GameRegistry.addRecipe(new ItemStack(axeBirdPoop), "pp ", "ps ", " s ",
+                        'p', BlockBirdPoopClean, 's', Item.stick);
+                
+                GameRegistry.addRecipe(new ItemStack(swordBirdPoop), "p", "p", "s",
+                        'p', BlockBirdPoopClean, 's', Item.stick);
+                
+                GameRegistry.addRecipe(new ItemStack(hoeBirdPoop), "pp ", " s ", " s ",
+                        'p', BlockBirdPoopClean, 's', Item.stick);
+                
+                GameRegistry.addRecipe(new ItemStack(shovelBirdPoop), "p", "s", "s",
+                        'p', BlockManureClean, 's', Item.stick);
+                
+                GameRegistry.addRecipe(new ItemStack(pickaxeManure), "ppp", " s ", " s ",
+                        'p', BlockManureClean, 's', Item.stick);
+                
+                GameRegistry.addRecipe(new ItemStack(axeManure), "pp ", "ps ", " s ",
+                        'p', BlockManureClean, 's', Item.stick);
+                
+                GameRegistry.addRecipe(new ItemStack(swordManure), "p", "p", "s",
+                        'p', BlockManureClean, 's', Item.stick);
+                
+                GameRegistry.addRecipe(new ItemStack(hoeManure), "pp ", " s ", " s ",
+                        'p', BlockManureClean, 's', Item.stick);
+               
                 GameRegistry.addRecipe(new ItemStack(helmetPoop), "ppp", "p p",
                         'p', BlockPoopClean);
                 
@@ -320,6 +429,30 @@ public class Anythinghonestly {
                 
                 GameRegistry.addRecipe(new ItemStack(bootsPoop), "p p", "p p",
                         'p', BlockPoopClean);
+                
+                GameRegistry.addRecipe(new ItemStack(helmetBirdPoop), "ppp", "p p",
+                        'p', BlockBirdPoopClean);
+                
+                GameRegistry.addRecipe(new ItemStack(plateBirdPoop), "p p", "ppp", "ppp",
+                        'p', BlockBirdPoopClean);
+                
+                GameRegistry.addRecipe(new ItemStack(legsBirdPoop), "ppp", "p p", "p p",
+                        'p', BlockBirdPoopClean);
+                
+                GameRegistry.addRecipe(new ItemStack(bootsBirdPoop), "p p", "p p",
+                        'p', BlockBirdPoopClean);
+                
+                GameRegistry.addRecipe(new ItemStack(helmetManure), "ppp", "p p",
+                        'p', BlockManureClean);
+                
+                GameRegistry.addRecipe(new ItemStack(plateManure), "p p", "ppp", "ppp",
+                        'p', BlockManureClean);
+                
+                GameRegistry.addRecipe(new ItemStack(legsManure), "ppp", "p p", "p p",
+                        'p', BlockManureClean);
+                
+                GameRegistry.addRecipe(new ItemStack(bootsManure), "p p", "p p",
+                        'p', BlockManureClean);
 
                 GameRegistry.addSmelting(PoopItem.itemID, new ItemStack(CleanPoopItem), 5f);
                 GameRegistry.addSmelting(ItemBirdPoop.itemID, new ItemStack(ItemBirdPoopClean), 5f);

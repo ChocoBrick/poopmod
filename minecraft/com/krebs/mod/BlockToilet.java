@@ -1,5 +1,7 @@
 package com.krebs.mod;
 
+import java.util.List;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -99,6 +101,7 @@ public class BlockToilet extends Block
         {
             return par1 == 1 ? this.iconTop : (par1 == 0 ? Block.blockIron.getBlockTextureFromSide(par1) : this.blockIcon);
         }
+        
 
         @SideOnly(Side.CLIENT)
         public void registerIcons(IconRegister par1IconRegister)
