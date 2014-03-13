@@ -17,6 +17,9 @@ import net.minecraftforge.event.entity.player.UseHoeEvent;
 
 public class PoopHoe extends Item
 {
+	
+	public static double rand;
+	   
     protected EnumToolMaterial theToolMaterial;
 
     public PoopHoe(int par1, EnumToolMaterial par2EnumToolMaterial)
@@ -53,8 +56,7 @@ public class PoopHoe extends Item
             if (par7 != 0 && air && (i1 == Block.grass.blockID || i1 == Block.dirt.blockID))
             {
             	
-            	 Random rand = new Random();
-            	    int randomNum = rand.nextInt((5 - 1) + 1) + 1;
+            	 rand = Math.random();
 
                 Block block = Block.tilledField;
                 par3World.playSoundEffect((double)((float)par4 + 0.5F), (double)((float)par5 + 0.5F), (double)((float)par6 + 0.5F), block.stepSound.getStepSound(), (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
@@ -65,13 +67,17 @@ public class PoopHoe extends Item
                 }
                 else
                 {
-                	if(randomNum <= 4){
-                    par3World.setBlock(par4, par5, par6, Block.tilledField.blockID, 1, 1);
-                	}else{
-                        par3World.setBlock(par4, par5, par6, block.blockID);
-                	}
-                    par1ItemStack.damageItem(1, par2EntityPlayer);
-                    return true;
+                	if(this != Anythinghonestly.hoeUltimate){
+                		if(rand < 0.55D){
+                			par3World.setBlock(par4, par5, par6, Block.tilledField.blockID, 1, 1);
+                		}else{
+                			par3World.setBlock(par4, par5, par6, block.blockID);
+                			}
+                				}else if(this == Anythinghonestly.hoeUltimate){
+                					par3World.setBlock(par4, par5, par6, Block.tilledField.blockID, 1, 1);	
+                				}
+                    				par1ItemStack.damageItem(1, par2EntityPlayer);
+                    				return true;
                 }
             }
             else

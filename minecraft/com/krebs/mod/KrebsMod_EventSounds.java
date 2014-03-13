@@ -19,7 +19,7 @@ public class KrebsMod_EventSounds
         }
         catch (Exception e)
         {
-            System.err.println("Failed to register one or more sounds.");
+            System.err.println("Failed to register one or more sounds in PoopMod.");
         }
     }
 }

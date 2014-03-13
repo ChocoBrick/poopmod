@@ -51,6 +51,7 @@ public class Anythinghonestly {
     };
     
     //hurray alex is on!
+    //Ult_
     
     String WordPoop = "Poop";
     Boolean isVulgar;
@@ -86,6 +87,12 @@ public class Anythinghonestly {
     static Item swordManure; 
     static Item hoeManure;
     
+    static Item shovelUltimate;
+    static Item pickaxeUltimate;
+    static Item axeUltimate;
+    static Item swordUltimate; 
+    static Item hoeUltimate;
+    
 //armor
     //poop
     static Item helmetPoop;
@@ -104,6 +111,12 @@ public class Anythinghonestly {
     static Item plateManure;
     static Item legsManure;
     static Item bootsManure;
+    
+    //ult
+    static Item helmetUltimate;
+    static Item plateUltimate;
+    static Item legsUltimate;
+    static Item bootsUltimate;
     
     static Entity EntityPoopball;
     
@@ -178,6 +191,12 @@ public class Anythinghonestly {
             int swordManureId = configFile.getItem("Manure Sword", 5033).getInt();
             int hoeManureId = configFile.getItem("Manure Hoe", 5034).getInt();
             
+            int shovelUltimateId = configFile.getItem("Ultimate Poop Shovel", 5035).getInt();
+            int pickaxeUltimateId = configFile.getItem("Ultimate Poop Pickaxe", 5036).getInt();
+            int axeUltimateId = configFile.getItem("Ultimate Poop Axe", 5037).getInt();
+            int swordUltimateId = configFile.getItem("Ultimate Poop Sword", 5038).getInt();
+            int hoeUltimateId = configFile.getItem("Ultimate Poop Hoe", 5039).getInt();
+            
             //armor
             int helmetPoopId = configFile.getItem("Poop Helmet", 5045).getInt();
             int platePoopId = configFile.getItem("Poop Plate", 5046).getInt();
@@ -193,6 +212,11 @@ public class Anythinghonestly {
             int plateManureId = configFile.getItem("Manure Plate", 5054).getInt();
             int legsManureId = configFile.getItem("Manure Leggings", 5055).getInt();
             int bootsManureId = configFile.getItem("Manure Boots", 5056).getInt();
+            
+            int helmetUltimateId = configFile.getItem("Ultimate Poop Helmet", 5057).getInt();
+            int plateUltimateId = configFile.getItem("Ultimate Poop Plate", 5058).getInt();
+            int legsUltimateId = configFile.getItem("Ultimate Poop Leggings", 5059).getInt();
+            int bootsUltimateId = configFile.getItem("Ultimate Poop Boots", 5060).getInt();
 
             configFile.save();
             
@@ -204,7 +228,7 @@ public class Anythinghonestly {
             toolPoop = net.minecraftforge.common.EnumHelper.addToolMaterial("POOP", 2, 64, 18F, 1, 4);
             toolBirdPoop = net.minecraftforge.common.EnumHelper.addToolMaterial("BIRDPOOP", 2, 60, 17F, 1, 4);
             toolManurePoop = net.minecraftforge.common.EnumHelper.addToolMaterial("COWPOOP", 2, 62, 17F, 1, 4);
-            toolUltimatePoop = net.minecraftforge.common.EnumHelper.addToolMaterial("SUPERPOOP", 2, 512, 25F, 1, 4);
+            toolUltimatePoop = net.minecraftforge.common.EnumHelper.addToolMaterial("SUPERPOOP", 4, 1024, 100F, 1, 4);
             
             //Armour Enums
             armorPoop = net.minecraftforge.common.EnumHelper.addArmorMaterial("POOP", 64, new int[] {2, 7, 5, 3}, 4);
@@ -241,6 +265,14 @@ public class Anythinghonestly {
             swordManure = (new ItemSword(swordManureId, toolManurePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_sword").setUnlocalizedName("Mswordpoop");
             hoeManure = (new PoopHoe(hoeManureId, toolManurePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_hoe").setUnlocalizedName("Mhoepoop");
             
+            shovelUltimate = (new ItemSpade(shovelUltimateId, toolUltimatePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_shovel").setUnlocalizedName("Ult_shovelpoop");
+            pickaxeUltimate = (new ItemPickaxe(pickaxeUltimateId, toolUltimatePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_pickaxe").setUnlocalizedName("Ult_pickpoop");
+            axeUltimate = (new ItemAxe(axeUltimateId, toolUltimatePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_axe").setUnlocalizedName("Ult_axepoop");
+            swordUltimate = (new ItemSword(swordUltimateId, toolUltimatePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_sword").setUnlocalizedName("Ult_swordpoop");
+            hoeUltimate = (new PoopHoe(hoeUltimateId, toolUltimatePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_hoe").setUnlocalizedName("Ult_hoepoop");
+            
+            
+            
             
             //Armor
             helmetPoop = (new PoopArmor(helmetPoopId, armorPoop, 3, 0)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_helmet").setUnlocalizedName("helmetpoop");
@@ -257,6 +289,11 @@ public class Anythinghonestly {
             plateManure = (new PoopArmor(plateManureId, armorManurePoop, 3, 1)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_chestplate").setUnlocalizedName("Mplatepoop");
             legsManure = (new PoopArmor(legsManureId, armorManurePoop, 3, 2)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_leggings").setUnlocalizedName("Mlegspoop");
             bootsManure = (new PoopArmor(bootsManureId, armorManurePoop, 3, 3)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_boots").setUnlocalizedName("Mbootspoop");
+            
+            helmetUltimate = (new PoopArmor(helmetUltimateId, armorUltimatePoop, 3, 0)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_helmet").setUnlocalizedName("Ult_helmetpoop");
+            plateUltimate = (new PoopArmor(plateUltimateId, armorUltimatePoop, 3, 1)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_chestplate").setUnlocalizedName("Ult_platepoop");
+            legsUltimate = (new PoopArmor(legsUltimateId, armorUltimatePoop, 3, 2)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_leggings").setUnlocalizedName("Ult_legspoop");
+            bootsUltimate = (new PoopArmor(bootsUltimateId, armorUltimatePoop, 3, 3)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_boots").setUnlocalizedName("Ult_bootspoop");
             
             //Blocks
             toilet = new BlockToilet(toiletId, Material.iron, false).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("toilet").setCreativeTab(tabkrebs);
@@ -294,7 +331,7 @@ public class Anythinghonestly {
                 LanguageRegistry.addName(BlockBirdPoopClean, "'Sanitized' Bird " + WordPoop + " Block");
                 LanguageRegistry.addName(BlockManure,"Manure Block");
                 LanguageRegistry.addName(BlockManureClean, "'Sanitized' Manure Block");
-                LanguageRegistry.addName(UltimatePoopBlock, "Ultimate " + WordPoop + " Block");
+                LanguageRegistry.addName(UltimatePoopBlock, "\u00a71Ultimate " + WordPoop + " Block");
                 
                 LanguageRegistry.addName(shovelPoop, WordPoop + " Shovel");
                 LanguageRegistry.addName(pickaxePoop, WordPoop + " Pickaxe");
@@ -311,6 +348,11 @@ public class Anythinghonestly {
                 LanguageRegistry.addName(axeManure, "Manure Axe");
                 LanguageRegistry.addName(swordManure, "Manure Sword");
                 LanguageRegistry.addName(hoeManure, "Manure Hoe");
+                LanguageRegistry.addName(shovelUltimate, "\u00a71Ultimate " + WordPoop + " Shovel");
+                LanguageRegistry.addName(pickaxeUltimate, "\u00a71Ultimate " + WordPoop + " Pickaxe");
+                LanguageRegistry.addName(axeUltimate, "\u00a71Ultimate " + WordPoop + " Axe");
+                LanguageRegistry.addName(swordUltimate, "\u00a71Ultimate " + WordPoop + " Sword");
+                LanguageRegistry.addName(hoeUltimate, "\u00a71Ultimate " + WordPoop + " Hoe");
                 
                 LanguageRegistry.addName(helmetPoop, WordPoop + " Helmet");
                 LanguageRegistry.addName(platePoop, WordPoop + " Chestplate");
@@ -324,6 +366,10 @@ public class Anythinghonestly {
                 LanguageRegistry.addName(plateManure, "Manure Chestplate");
                 LanguageRegistry.addName(legsManure, "Manure Leggings");
                 LanguageRegistry.addName(bootsManure, "Manure Boots");
+                LanguageRegistry.addName(helmetUltimate, "\u00a71Ultimate " + WordPoop + " Helmet");
+                LanguageRegistry.addName(plateUltimate, "\u00a71Ultimate " + WordPoop + " Chestplate");
+                LanguageRegistry.addName(legsUltimate, "\u00a71Ultimate " + WordPoop + " Leggings");
+                LanguageRegistry.addName(bootsUltimate, "\u00a71Ultimate " + WordPoop + " Boots");
 
                 LanguageRegistry.instance().addStringLocalization("achievement.eatShitAchieve", "en_US", "Got " + WordPoop);
                 LanguageRegistry.instance().addStringLocalization("achievement.eatShitAchieve.desc", "en_US", "You fool! What's wrong with you!!!");
@@ -381,7 +427,7 @@ public class Anythinghonestly {
                         'p', BlockPoopClean);
                 
                 GameRegistry.addRecipe(new ItemStack(ItemBirdPoop,9), "p",
-                        'p', BlockBirdPoop);
+                        'p', BlockBirdPoopClean);
                 
                 GameRegistry.addRecipe(new ItemStack(ItemBirdPoopClean,9), "p",
                         'p', BlockBirdPoopClean);
@@ -400,9 +446,24 @@ public class Anythinghonestly {
                 
                 GameRegistry.addRecipe(new ItemStack(ItemPoopball,4), "p",
                         'p', PoopItem);
-                
+                //
                 GameRegistry.addRecipe(new ItemStack(ItemPoopball,4), "p",
                         'p', CleanPoopItem);
+                
+                GameRegistry.addRecipe(new ItemStack(ItemPoopball,4), "p",
+                        'p', ItemBirdPoop);
+                
+                GameRegistry.addRecipe(new ItemStack(ItemPoopball,4), "p",
+                        'p', ItemBirdPoopClean);
+                
+                GameRegistry.addRecipe(new ItemStack(ItemPoopball,4), "p",
+                        'p', ItemManure);
+                
+                GameRegistry.addRecipe(new ItemStack(ItemPoopball,4), "p",
+                        'p', ItemManureClean);
+                
+                GameRegistry.addRecipe(new ItemStack(ItemPoopball,16), "p",
+                        'p', UltimatePoopIngot);
                 //
                 GameRegistry.addRecipe(new ItemStack(shovelPoop), "p", "s", "s",
                         'p', BlockPoopClean, 's', Item.stick);
@@ -448,6 +509,21 @@ public class Anythinghonestly {
                 
                 GameRegistry.addRecipe(new ItemStack(hoeManure), "pp ", " s ", " s ",
                         'p', BlockManureClean, 's', Item.stick);
+                
+                GameRegistry.addRecipe(new ItemStack(shovelUltimate), "p", "s", "s",
+                        'p', UltimatePoopBlock, 's', Item.stick);
+                
+                GameRegistry.addRecipe(new ItemStack(pickaxeUltimate), "ppp", " s ", " s ",
+                        'p', UltimatePoopBlock, 's', Item.stick);
+                
+                GameRegistry.addRecipe(new ItemStack(axeUltimate), "pp ", "ps ", " s ",
+                        'p', UltimatePoopBlock, 's', Item.stick);
+                
+                GameRegistry.addRecipe(new ItemStack(swordUltimate), "p", "p", "s",
+                        'p', UltimatePoopBlock, 's', Item.stick);
+                
+                GameRegistry.addRecipe(new ItemStack(hoeUltimate), "pp ", " s ", " s ",
+                        'p', UltimatePoopBlock, 's', Item.stick);
                
                 GameRegistry.addRecipe(new ItemStack(helmetPoop), "ppp", "p p",
                         'p', BlockPoopClean);
@@ -484,6 +560,21 @@ public class Anythinghonestly {
                 
                 GameRegistry.addRecipe(new ItemStack(bootsManure), "p p", "p p",
                         'p', BlockManureClean);
+                
+                GameRegistry.addRecipe(new ItemStack(helmetUltimate), "ppp", "p p",
+                        'p', UltimatePoopBlock);
+                
+                GameRegistry.addRecipe(new ItemStack(plateUltimate), "p p", "ppp", "ppp",
+                        'p', UltimatePoopBlock);
+                
+                GameRegistry.addRecipe(new ItemStack(legsUltimate), "ppp", "p p", "p p",
+                        'p', UltimatePoopBlock);
+                
+                GameRegistry.addRecipe(new ItemStack(bootsUltimate), "p p", "p p",
+                        'p', UltimatePoopBlock);
+                
+                GameRegistry.addShapelessRecipe(new ItemStack(UltimatePoopIngot),
+                		BlockBirdPoopClean, BlockManureClean, BlockPoopClean, Item.coal, Item.slimeBall);
 
                 GameRegistry.addSmelting(PoopItem.itemID, new ItemStack(CleanPoopItem), 5f);
                 GameRegistry.addSmelting(ItemBirdPoop.itemID, new ItemStack(ItemBirdPoopClean), 5f);

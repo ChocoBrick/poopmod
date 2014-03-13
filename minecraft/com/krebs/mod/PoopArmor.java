@@ -53,7 +53,18 @@ import net.minecraft.nbt.NBTTagCompound;
 	                        return "krebsmodid:textures/armor/COWPOOP_layer_2.png";//2
 	                }
 	                
+
 	                //ultimate
+	                
+	                if(stack.itemID == Anythinghonestly.helmetUltimate.itemID || stack.itemID == Anythinghonestly.plateUltimate.itemID || stack.itemID == Anythinghonestly.bootsUltimate.itemID)
+	                {
+	                        return "krebsmodid:textures/armor/ULTIMATEPOOP_layer_1.png";//1
+	                }
+	                
+	                if(stack.itemID == Anythinghonestly.legsUltimate.itemID)
+	                {
+	                        return "krebsmodid:textures/armor/ULTIMATEPOOP_layer_2.png";//2
+	                }
 	                
 	                
 	                //elseifnull
