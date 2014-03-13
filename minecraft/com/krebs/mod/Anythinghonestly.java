@@ -62,6 +62,7 @@ public class Anythinghonestly {
     static Item ItemManure;
     static Item ItemManureClean;
     static Item ItemPoopball;
+    static Item UltimatePoopIngot;
     
 //tools
     //poop tools
@@ -118,11 +119,12 @@ public class Anythinghonestly {
     static Block toilet;
     static Block BlockPoop;
     static Block BlockPoopClean;
-    
     static Block BlockBirdPoop;
     static Block BlockBirdPoopClean;
     static Block BlockManure;
     static Block BlockManureClean;
+    static Block UltimatePoopBlock;
+    
     
     static Achievement eatShitAchieve;
     static Achievement eatCleanShitAchieve;
@@ -145,7 +147,8 @@ public class Anythinghonestly {
             int BlockBirdPoopCleanId = configFile.get(Configuration.CATEGORY_BLOCK, "'Sanitized' Bird Poop Block", 2464).getInt();
             int BlockManureId = configFile.get(Configuration.CATEGORY_BLOCK, "Manure Block", 2465).getInt();
             int BlockManureCleanId = configFile.get(Configuration.CATEGORY_BLOCK, "'Sanitized' Manure Block", 2466).getInt();
-
+            int UltimatePoopBlockId = configFile.get(Configuration.CATEGORY_BLOCK, "Ultimate Poop Block", 2467).getInt();
+            
             //poop items
             int PoopId = configFile.getItem("Poop", 5000).getInt();
             int CleanPoopId = configFile.getItem("'Sanitized' Poop", 5001).getInt();
@@ -154,6 +157,7 @@ public class Anythinghonestly {
             int CleanBirdPoopId = configFile.getItem("Sanitized Bird Poop", 5004).getInt();
             int ManureId = configFile.getItem("Manure", 5005).getInt();
             int CleanManureId = configFile.getItem("Sanitized Manure", 5006).getInt();
+            int UltimatePoopIngotId = configFile.getItem("Ultimate Poop Ingot", 5007).getInt();
             
             //tools
             int shovelPoopId = configFile.getItem("Poop Shovel", 5020).getInt();
@@ -216,25 +220,26 @@ public class Anythinghonestly {
             ItemBirdPoopClean = new ItemPoop(CleanBirdPoopId, 2, 1.2F, true).setAlwaysEdible().setUnlocalizedName("BCpoopI").setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoopcleani");
             ItemManure = new ItemPoop(ManureId, 2, 1.2F, true).setAlwaysEdible().setUnlocalizedName("CpoopI").setCreativeTab(tabkrebs).setTextureName("krebsmodid:cowpoop");
             ItemManureClean = new ItemPoop(CleanManureId, 4, 1.2F, true).setAlwaysEdible().setUnlocalizedName("CCpoopI").setCreativeTab(tabkrebs).setTextureName("krebsmodid:cowpoopclean");
+            UltimatePoopIngot = new ItemPoop(UltimatePoopIngotId, 8, 1.5F, true).setAlwaysEdible().setUnlocalizedName("UltPooI").setCreativeTab(tabkrebs).setTextureName("krebsmodid:ultimatepoopingot");
             
             //Tools
             shovelPoop = (new ItemSpade(shovelPoopId, toolPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_shovel").setUnlocalizedName("shovelpoop");
             pickaxePoop = (new ItemPickaxe(pickaxePoopId, toolPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_pickaxe").setUnlocalizedName("pickpoop");
             axePoop = (new ItemAxe(axePoopId, toolPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_axe").setUnlocalizedName("axepoop");
             swordPoop = (new ItemSword(swordPoopId, toolPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_sword").setUnlocalizedName("swordpoop");
-            hoePoop = (new ItemHoe(hoePoopId, toolPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_hoe").setUnlocalizedName("hoepoop");
+            hoePoop = (new PoopHoe(hoePoopId, toolPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:poop_hoe").setUnlocalizedName("hoepoop");
             
             shovelBirdPoop = (new ItemSpade(shovelBirdPoopId, toolBirdPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoop_shovel").setUnlocalizedName("Bshovelpoop");
             pickaxeBirdPoop = (new ItemPickaxe(pickaxeBirdPoopId, toolBirdPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoop_pickaxe").setUnlocalizedName("Bpickpoop");
             axeBirdPoop = (new ItemAxe(axeBirdPoopId, toolBirdPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoop_axe").setUnlocalizedName("Baxepoop");
             swordBirdPoop = (new ItemSword(swordBirdPoopId, toolBirdPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoop_sword").setUnlocalizedName("Bswordpoop");
-            hoeBirdPoop = (new ItemHoe(hoeBirdPoopId, toolBirdPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoop_hoe").setUnlocalizedName("Bhoepoop");
+            hoeBirdPoop = (new PoopHoe(hoeBirdPoopId, toolBirdPoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoop_hoe").setUnlocalizedName("Bhoepoop");
             
             shovelManure = (new ItemSpade(shovelManureId, toolManurePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_shovel").setUnlocalizedName("Mshovelpoop");
             pickaxeManure = (new ItemPickaxe(pickaxeManureId, toolManurePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_pickaxe").setUnlocalizedName("Mpickpoop");
             axeManure = (new ItemAxe(axeManureId, toolManurePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_axe").setUnlocalizedName("Maxepoop");
             swordManure = (new ItemSword(swordManureId, toolManurePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_sword").setUnlocalizedName("Mswordpoop");
-            hoeManure = (new ItemHoe(hoeManureId, toolManurePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_hoe").setUnlocalizedName("Mhoepoop");
+            hoeManure = (new PoopHoe(hoeManureId, toolManurePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_hoe").setUnlocalizedName("Mhoepoop");
             
             
             //Armor
@@ -261,6 +266,7 @@ public class Anythinghonestly {
             BlockBirdPoopClean = new BlockPoop(BlockBirdPoopCleanId, Material.ground).setStepSound(Block.soundSandFootstep).setUnlocalizedName("cleanpoopbirdblock").setCreativeTab(tabkrebs).setTextureName("krebsmodid:birdpoopclean");
             BlockManure = new BlockPoop(BlockManureId, Material.ground).setStepSound(Block.soundSandFootstep).setUnlocalizedName("manureblock").setCreativeTab(tabkrebs).setTextureName("krebsmodid:cowpoop");
             BlockManureClean = new BlockPoop(BlockManureCleanId, Material.ground).setStepSound(Block.soundSandFootstep).setUnlocalizedName("manureblockclean").setCreativeTab(tabkrebs).setTextureName("krebsmodid:cowpoopclean");
+            UltimatePoopBlock = new BlockPoop(UltimatePoopBlockId, Material.ground).setStepSound(Block.soundSandFootstep).setUnlocalizedName("ultimateblock").setCreativeTab(tabkrebs).setTextureName("krebsmodid:ultimatepoopblock");
 
             //Achivements
             eatShitAchieve = new Achievement(1500, "eatShitAchieve", 1, -6, PoopItem, AchievementList.buildWorkBench).registerAchievement();
@@ -279,6 +285,7 @@ public class Anythinghonestly {
                 LanguageRegistry.addName(ItemManure,"Manure");
                 LanguageRegistry.addName(ItemManureClean, "'Sanitized' Manure");
                 LanguageRegistry.addName(ItemPoopball,  WordPoop + "ball");
+                LanguageRegistry.addName(UltimatePoopIngot, "Ultimate " + WordPoop + " Ingot");
                 
                 LanguageRegistry.addName(toilet,"Toilet");
                 LanguageRegistry.addName(BlockPoop, WordPoop + " Block");
@@ -287,6 +294,7 @@ public class Anythinghonestly {
                 LanguageRegistry.addName(BlockBirdPoopClean, "'Sanitized' Bird " + WordPoop + " Block");
                 LanguageRegistry.addName(BlockManure,"Manure Block");
                 LanguageRegistry.addName(BlockManureClean, "'Sanitized' Manure Block");
+                LanguageRegistry.addName(UltimatePoopBlock, "Ultimate " + WordPoop + " Block");
                 
                 LanguageRegistry.addName(shovelPoop, WordPoop + " Shovel");
                 LanguageRegistry.addName(pickaxePoop, WordPoop + " Pickaxe");
@@ -330,6 +338,7 @@ public class Anythinghonestly {
                 GameRegistry.registerBlock(BlockBirdPoopClean, BlockBirdPoopClean.getUnlocalizedName());
                 GameRegistry.registerBlock(BlockManure, BlockManure.getUnlocalizedName());
                 GameRegistry.registerBlock(BlockManureClean, BlockManureClean.getUnlocalizedName());
+                GameRegistry.registerBlock(UltimatePoopBlock, UltimatePoopBlock.getUnlocalizedName());
                 
                 
                 MinecraftForge.setBlockHarvestLevel(toilet, "pickaxe", 1);
@@ -339,6 +348,7 @@ public class Anythinghonestly {
                 MinecraftForge.setBlockHarvestLevel(BlockBirdPoopClean, "shovel", 1);
                 MinecraftForge.setBlockHarvestLevel(BlockManure, "shovel", 1);
                 MinecraftForge.setBlockHarvestLevel(BlockManureClean, "shovel", 1);
+                MinecraftForge.setBlockHarvestLevel(UltimatePoopBlock, "shovel", 1);
 
                 GameRegistry.addRecipe(new ItemStack(toilet), "iwi", "iqi", "iii",
                         'i', Item.ingotIron, 'w', Item.bucketWater, 'q', Item.netherQuartz);
@@ -361,8 +371,29 @@ public class Anythinghonestly {
                 GameRegistry.addRecipe(new ItemStack(BlockManureClean), "ppp", "ppp", "ppp",
                         'p', ItemManureClean);
                 
+                GameRegistry.addRecipe(new ItemStack(UltimatePoopBlock), "ppp", "ppp", "ppp",
+                        'p', UltimatePoopIngot);
+                
                 GameRegistry.addRecipe(new ItemStack(PoopItem,9), "p",
                         'p', BlockPoop);
+                //
+                GameRegistry.addRecipe(new ItemStack(CleanPoopItem,9), "p",
+                        'p', BlockPoopClean);
+                
+                GameRegistry.addRecipe(new ItemStack(ItemBirdPoop,9), "p",
+                        'p', BlockBirdPoop);
+                
+                GameRegistry.addRecipe(new ItemStack(ItemBirdPoopClean,9), "p",
+                        'p', BlockBirdPoopClean);
+                
+                GameRegistry.addRecipe(new ItemStack(ItemManure,9), "p",
+                        'p', BlockManure);
+                
+                GameRegistry.addRecipe(new ItemStack(ItemManureClean,9), "p",
+                        'p', BlockManureClean);
+                
+                GameRegistry.addRecipe(new ItemStack(UltimatePoopIngot,9), "p",
+                        'p', UltimatePoopBlock);
                 
                 GameRegistry.addRecipe(new ItemStack(CleanPoopItem,9), "p",
                         'p', BlockPoopClean);
@@ -372,7 +403,7 @@ public class Anythinghonestly {
                 
                 GameRegistry.addRecipe(new ItemStack(ItemPoopball,4), "p",
                         'p', CleanPoopItem);
-                
+                //
                 GameRegistry.addRecipe(new ItemStack(shovelPoop), "p", "s", "s",
                         'p', BlockPoopClean, 's', Item.stick);
                 
