@@ -490,6 +490,7 @@ public class Anythinghonestly {
                 GameRegistry.addSmelting(ItemManure.itemID, new ItemStack(ItemManureClean), 5f);
                 
                 EntityRegistry.registerModEntity(EntityPoopball.class, "Poopball", 1, instance, 120, 3, true);
+                MinecraftForge.EVENT_BUS.register(new PoopDroping());
 
                 
                 
