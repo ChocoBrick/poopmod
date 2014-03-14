@@ -265,11 +265,11 @@ public class Anythinghonestly {
             swordManure = (new ItemSword(swordManureId, toolManurePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_sword").setUnlocalizedName("Mswordpoop");
             hoeManure = (new PoopHoe(hoeManureId, toolManurePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:manurepoop_hoe").setUnlocalizedName("Mhoepoop");
             
-            shovelUltimate = (new ItemSpade(shovelUltimateId, toolUltimatePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_shovel").setUnlocalizedName("krebsmodid:ult_shovelpoop");
-            pickaxeUltimate = (new ItemPickaxe(pickaxeUltimateId, toolUltimatePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_pickaxe").setUnlocalizedName("krebsmodid:ult_pickpoop");
-            axeUltimate = (new ItemAxe(axeUltimateId, toolUltimatePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_axe").setUnlocalizedName("krebsmodid:ult_axepoop");
-            swordUltimate = (new ItemSword(swordUltimateId, toolUltimatePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_sword").setUnlocalizedName("krebsmodid:ult_swordpoop");
-            hoeUltimate = (new PoopHoe(hoeUltimateId, toolUltimatePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_hoe").setUnlocalizedName("krebsmodid:ult_hoepoop");
+            shovelUltimate = (new ItemSpade(shovelUltimateId, toolUltimatePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_shovel").setUnlocalizedName("krebsmodid:ult_poop_shovel");
+            pickaxeUltimate = (new ItemPickaxe(pickaxeUltimateId, toolUltimatePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_pickaxe").setUnlocalizedName("krebsmodid:ult_poop_pickaxe");
+            axeUltimate = (new ItemAxe(axeUltimateId, toolUltimatePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_axe").setUnlocalizedName("krebsmodid:ult_poop_axe");
+            swordUltimate = (new ItemSword(swordUltimateId, toolUltimatePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_sword").setUnlocalizedName("krebsmodid:ult_poop_sword");
+            hoeUltimate = (new PoopHoe(hoeUltimateId, toolUltimatePoop)).setCreativeTab(tabkrebs).setTextureName("krebsmodid:Ult_poop_hoe").setUnlocalizedName("krebsmodid:ult_poop_hoe");
             
             
             
