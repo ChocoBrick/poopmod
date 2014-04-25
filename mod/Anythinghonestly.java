@@ -2,6 +2,8 @@ package com.poopmod.mod;
 
 import java.util.Map;
 
+import com.poopmod.mod.porxy.CommonProxy;
+
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemAxe;
@@ -40,14 +42,6 @@ public class Anythinghonestly {
         @SidedProxy(clientSide="com.krebs.mod.ClientProxy", serverSide="com.krebs.mod.CommonProxy")
         public static CommonProxy proxy;
 
-        public static CreativeTabs tabkrebs = new CreativeTabs("tabkrebs") {
-            public ItemStack getIconItemStack() {
-                    return new ItemStack(PoopItem, 1, 0);
-            }
-    };
-    
-    //hurray alex is on!
-    //Ult_
     
     String WordPoop = "Poop";
     Boolean isVulgar;

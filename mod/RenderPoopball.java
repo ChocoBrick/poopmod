@@ -21,7 +21,7 @@ public class RenderPoopball extends Render
 //herehereherehereherehere
 //                                                                               |  |  |  |
 //                                                                               V  V  V  V
-    private static final ResourceLocation arrowTextures = new ResourceLocation("krebsmodid", "textures/entity/poopball.png");
+    private static final ResourceLocation arrowTextures = new ResourceLocation("poopmod:", "textures/entity/poopball.png");
 
     public void renderArrow(EntityPoopball par1Entity, double par2, double par4, double par6, float par8, float par9)
     {

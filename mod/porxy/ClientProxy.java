@@ -1,4 +1,7 @@
-package com.poopmod.mod;
+package com.poopmod.mod.porxy;
+
+import com.poopmod.mod.EntityPoopball;
+import com.poopmod.mod.RenderPoopball;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
