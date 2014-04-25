@@ -1,15 +1,11 @@
 package com.poopmod.mod.armor;
 
 import java.util.List;
-
-import com.poopmod.mod.PoopMod;
-import com.poopmod.mod.items.MainItems;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
+import com.poopmod.mod.items.MainItems;
 
 		public class PoopArmor extends ItemArmor {
 			public PoopArmor(int par1, ArmorMaterial par2EnumArmorMaterial,int par3, int par4) {
@@ -71,7 +67,8 @@ import net.minecraft.nbt.NBTTagCompound;
 	                return "krebsmodid:textures/armor/POOP_layer_1.png";//1
 	        }
 	        
-	        @Override      
+	        @SuppressWarnings({ "rawtypes", "unchecked" })
+			@Override      
 	        public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
 	        {
 	            par3List.add("Not the best decision...");

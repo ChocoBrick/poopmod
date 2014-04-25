@@ -1,8 +1,5 @@
 package com.poopmod.mod.handler;
 
-import com.poopmod.mod.PoopMod;
-import com.poopmod.mod.items.MainItems;
-
 import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.entity.monster.EntityZombie;
@@ -13,6 +10,8 @@ import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+
+import com.poopmod.mod.items.MainItems;
 
 public class PoopDropingHandler {
    public static double rand;

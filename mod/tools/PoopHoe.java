@@ -21,7 +21,7 @@ public class PoopHoe<EnumToolMaterial> extends Item
 	   
     protected EnumToolMaterial theToolMaterial;
 
-    public  PoopHoe(int par1, EnumToolMaterial par2EnumToolMaterial)
+    public  PoopHoe(EnumToolMaterial par2EnumToolMaterial)
     {
         super();
         this.theToolMaterial = par2EnumToolMaterial;

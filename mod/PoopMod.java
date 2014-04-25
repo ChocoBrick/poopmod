@@ -51,6 +51,7 @@ public class PoopMod{
                 EnumManager.addEnumTypes();
                 MainBlocks.addBlocks();
                 MainItems.addItems();
+                Registry.RegisterItems();
                 Registry.RegisterBlocks();   
                 Registry.RegisterBlockHarvestlevel();
                 Achievments.addAchievments();

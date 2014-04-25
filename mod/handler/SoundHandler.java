@@ -11,9 +11,11 @@ public class SoundHandler
     {
         try
         {
+        	/*
         	event.manager.addSound("krebsmodid:toilet1.ogg");
         	event.manager.addSound("krebsmodid:toilet2.ogg");
         	event.manager.addSound("krebsmodid:toilet3.ogg");
+        	*/
         }
         catch (Exception e)
         {

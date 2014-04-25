@@ -7,6 +7,7 @@ import com.poopmod.mod.blocks.MainBlocks;
 import com.poopmod.mod.entity.EntityPoopball;
 import com.poopmod.mod.handler.PoopDropingHandler;
 import com.poopmod.mod.handler.SoundHandler;
+import com.poopmod.mod.items.MainItems;
 
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -33,6 +34,33 @@ public class Registry {
         GameRegistry.registerBlock(MainBlocks.BlockManure, MainBlocks.BlockManure.getUnlocalizedName());
         GameRegistry.registerBlock(MainBlocks.BlockManureClean, MainBlocks.BlockManureClean.getUnlocalizedName());
         GameRegistry.registerBlock(MainBlocks.UltimatePoopBlock, MainBlocks.UltimatePoopBlock.getUnlocalizedName());
+	}
+	
+	public static void RegisterItems(){
+		
+		GameRegistry.registerItem(MainItems.pickaxePoop, MainItems.pickaxePoop.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.axePoop, MainItems.axePoop.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.shovelPoop, MainItems.shovelPoop.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.swordPoop, MainItems.swordPoop.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.hoePoop, MainItems.hoePoop.getUnlocalizedName());
+		
+		GameRegistry.registerItem(MainItems.pickaxeBirdPoop, MainItems.pickaxeBirdPoop.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.axeBirdPoop, MainItems.axeBirdPoop.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.shovelBirdPoop, MainItems.shovelBirdPoop.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.swordBirdPoop, MainItems.swordBirdPoop.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.hoeBirdPoop, MainItems.hoeBirdPoop.getUnlocalizedName());
+		
+		GameRegistry.registerItem(MainItems.pickaxeManure, MainItems.pickaxeManure.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.axeManure, MainItems.axeManure.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.shovelManure, MainItems.shovelManure.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.swordManure, MainItems.swordManure.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.hoeManure, MainItems.hoeManure.getUnlocalizedName());
+		
+		GameRegistry.registerItem(MainItems.pickaxeUltimate, MainItems.pickaxeUltimate.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.axeUltimate, MainItems.axeUltimate.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.shovelUltimate, MainItems.shovelUltimate.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.swordUltimate, MainItems.swordUltimate.getUnlocalizedName());
+		
 	}
 	
 	public static void RegisterBlockHarvestlevel(){

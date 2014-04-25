@@ -1,13 +1,11 @@
 package com.poopmod.mod.items;
 
-import com.poopmod.mod.PoopMod;
-import com.poopmod.mod.entity.EntityPoopball;
-
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import com.poopmod.mod.PoopMod;
+import com.poopmod.mod.entity.EntityPoopball;
 
 public class ItemPoopball extends Item
 {
