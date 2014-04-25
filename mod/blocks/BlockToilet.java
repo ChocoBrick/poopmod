@@ -1,30 +1,33 @@
-package com.poopmod.mod;
+package com.poopmod.mod.blocks;
 
 import java.util.List;
+
+import com.poopmod.mod.PoopMod;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
 public class BlockToilet extends Block
 {
 	@SideOnly(Side.CLIENT)
-    private Icon iconTop;
+    private IIcon iconTop;
 
 	 private final boolean powered;
 
         public BlockToilet (int id, Material material, boolean par2)
         {
-                super(id, material);
+                super(material);
                 this.blockHardness = 4F;
                 this.blockResistance = 30F;
                 this.powered = par2;
@@ -97,16 +100,16 @@ public class BlockToilet extends Block
         }
 
         @SideOnly(Side.CLIENT)
-        public Icon getIcon(int par1, int par2)
+        public IIcon getIcon(int par1, int par2)
         {
-            return par1 == 1 ? this.iconTop : (par1 == 0 ? Block.blockIron.getBlockTextureFromSide(par1) : this.blockIcon);
+            return par1 == 1 ? this.iconTop : (par1 == 0 ? Blocks.iron_block.getBlockTextureFromSide(par1) : this.blockIcon);
         }
         
 
         @SideOnly(Side.CLIENT)
-        public void registerIcons(IconRegister par1IconRegister)
+        public void registerIcons(IIconRegister par1IconRegister)
         {
-            this.blockIcon = par1IconRegister.registerIcon("krebsmodid:" + "toilet" + "_side");
-            this.iconTop = par1IconRegister.registerIcon("krebsmodid:" + "toilet" + "_top");
+            this.blockIcon = par1IconRegister.registerIcon("poopmod:" + "toilet" + "_side");
+            this.iconTop = par1IconRegister.registerIcon("poopmod:" + "toilet" + "_top");
         }
 }

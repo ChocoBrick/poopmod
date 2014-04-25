@@ -1,6 +1,8 @@
-package com.poopmod.mod;
+package com.poopmod.mod.armor;
 
 import java.util.List;
+
+import com.poopmod.mod.PoopMod;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
@@ -21,7 +23,7 @@ import net.minecraft.nbt.NBTTagCompound;
 	        {
 	        	
 	        		//poop
-	                if(stack.itemID == PoopMod.helmetPoop.itemID || stack.itemID == PoopMod.platePoop.itemID || stack.itemID == PoopMod.bootsPoop.itemID)
+	                if(stack == PoopMod.helmetPoop || stack == PoopMod.platePoop.itemID || stack == PoopMod.bootsPoop)
 	                {
 	                        return "krebsmodid:textures/armor/POOP_layer_1.png";//1
 	                }

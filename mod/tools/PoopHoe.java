@@ -1,33 +1,31 @@
-package com.poopmod.mod;
+package com.poopmod.mod.tools;
 
-import java.util.Random;
-
+import com.poopmod.mod.MainItems;
+import cpw.mods.fml.common.eventhandler.Event.Result;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 
-public class PoopHoe extends Item
+public class PoopHoe<EnumToolMaterial> extends Item
 {
 	
 	public static double rand;
 	   
     protected EnumToolMaterial theToolMaterial;
 
-    public PoopHoe(int par1, EnumToolMaterial par2EnumToolMaterial)
+    public  PoopHoe(int par1, EnumToolMaterial par2EnumToolMaterial)
     {
-        super(par1);
+        super();
         this.theToolMaterial = par2EnumToolMaterial;
         this.maxStackSize = 1;
-        this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
+        this.setMaxDamage(128);
     }
 
     public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
@@ -50,16 +48,16 @@ public class PoopHoe extends Item
                 return true;
             }
 
-            int i1 = par3World.getBlockId(par4, par5, par6);
+            Block i1 = par3World.getBlock(par4, par5, par6);
             boolean air = par3World.isAirBlock(par4, par5 + 1, par6);
 
-            if (par7 != 0 && air && (i1 == Block.grass.blockID || i1 == Block.dirt.blockID))
+            if (par7 != 0 && air && (i1 == Blocks.grass || i1 == Blocks.dirt))
             {
             	
             	 rand = Math.random();
 
-                Block block = Block.tilledField;
-                par3World.playSoundEffect((double)((float)par4 + 0.5F), (double)((float)par5 + 0.5F), (double)((float)par6 + 0.5F), block.stepSound.getStepSound(), (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
+                Block block = Blocks.farmland;
+                par3World.playSoundEffect((double)((float)par4 + 0.5F), (double)((float)par5 + 0.5F), (double)((float)par6 + 0.5F), block.stepSound.getBreakSound(), (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
 
                 if (par3World.isRemote)
                 {
@@ -67,14 +65,14 @@ public class PoopHoe extends Item
                 }
                 else
                 {
-                	if(this != PoopMod.hoeUltimate){
+                	if(this != MainItems.hoeUltimate){
                 		if(rand < 0.55D){
-                			par3World.setBlock(par4, par5, par6, Block.tilledField.blockID, 1, 1);
+                			par3World.setBlock(par4, par5, par6, Blocks.farmland, 1, 1);
                 		}else{
-                			par3World.setBlock(par4, par5, par6, block.blockID);
+                			par3World.setBlock(par4, par5, par6, block);
                 			}
-                				}else if(this == PoopMod.hoeUltimate){
-                					par3World.setBlock(par4, par5, par6, Block.tilledField.blockID, 1, 1);	
+                				}else if(this == MainItems.hoeUltimate){
+                					par3World.setBlock(par4, par5, par6, Blocks.farmland, 1, 1);	
                 				}
                     				par1ItemStack.damageItem(1, par2EntityPlayer);
                     				return true;

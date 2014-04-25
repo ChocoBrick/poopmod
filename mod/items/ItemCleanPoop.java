@@ -1,4 +1,6 @@
-package com.poopmod.mod;
+package com.poopmod.mod.items;
+
+import com.poopmod.mod.PoopMod;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

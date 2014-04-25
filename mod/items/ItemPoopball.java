@@ -1,4 +1,4 @@
-package com.poopmod.mod;
+package com.poopmod.mod.items;
 
 import com.krebs.mod.EntityPoopball;
 

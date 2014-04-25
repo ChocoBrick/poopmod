@@ -9,13 +9,11 @@ import net.minecraft.entity.passive.EntityMooshroom;
 import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.passive.EntityVillager;
-import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 
 public class PoopDroping {
    public static double rand;
    
-   @ForgeSubscribe
    public void onEntityDrop(LivingDropsEvent event) {
 	   
 	   //cow/sheep/pig
@@ -23,7 +21,7 @@ public class PoopDroping {
                             rand = Math.random();
                     //1D = 100%, .5D = 50%        
             if (rand < 0.2D) {
-               event.entityLiving.dropItem(PoopMod.ItemManure.itemID, 1);
+               event.entityLiving.dropItem(PoopMod.ItemManure, 1);
             }
          }
          
@@ -32,7 +30,7 @@ public class PoopDroping {
              rand = Math.random();
      //1D = 100%, .5D = 50%        
              if (rand < 0.35D) {
-            	 event.entityLiving.dropItem(PoopMod.ItemBirdPoop.itemID, 1);
+            	 event.entityLiving.dropItem(PoopMod.ItemBirdPoop, 1);
              }
          }
          
@@ -41,7 +39,7 @@ public class PoopDroping {
              rand = Math.random();
      //1D = 100%, .5D = 50%        
              if (rand < 0.2D) {
-            	 event.entityLiving.dropItem(PoopMod.PoopItem.itemID, 1);
+            	 event.entityLiving.dropItem(PoopMod.PoopItem, 1);
              }
          }
          
