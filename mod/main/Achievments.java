@@ -5,6 +5,7 @@ import net.minecraft.stats.AchievementList;
 import com.poopmod.mod.items.MainItems;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 
 public class Achievments {
@@ -12,7 +13,7 @@ public class Achievments {
 	public static Achievement eatShitAchieve;
 	public static Achievement eatCleanShitAchieve;
 	
-	public static void addAchievments(FMLInitializationEvent event){
+	public static void addAchievments(FMLPreInitializationEvent event){
 		
 	 eatShitAchieve = new Achievement("eatShitAchieve", "eatShitAchieve", 1, -6, MainItems.PoopItem, AchievementList.buildWorkBench).registerStat();
    	 eatCleanShitAchieve = new Achievement("eatCleanShitAchieve", "eatCleanShitAchieve",-1, -6, MainItems.CleanPoopItem, eatShitAchieve).registerStat();

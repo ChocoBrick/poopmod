@@ -1,6 +1,7 @@
 package com.poopmod.mod.manager;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
@@ -17,7 +18,7 @@ public class EnumManager {
 	public static ArmorMaterial armorManurePoop;
 	public static ArmorMaterial armorUltimatePoop;
 	
-	public static void addEnumTypes(FMLInitializationEvent event){
+	public static void addEnumTypes(FMLPreInitializationEvent event){
 		
 		//Tool ENUMS
 		 toolPoop = EnumHelper.addToolMaterial("POOP", 2, 64, 18F, 1, 4);

@@ -97,18 +97,27 @@ public class BlockToilet extends Block
         entityitem.posZ = z + .5;
         world.spawnEntityInWorld(entityitem);
         }
-
+        
         @SideOnly(Side.CLIENT)
+        private IIcon furnaceIconTop;
+        @SideOnly(Side.CLIENT)
+        private IIcon furnaceIconFront;
+
+        @Override
         public IIcon getIcon(int par1, int par2)
         {
-            return par1 == 1 ? this.iconTop : (par1 == 0 ? Blocks.iron_block.getBlockTextureFromSide(par1) : this.blockIcon);
+        	if (par2 == 0 && par1 == 3)return furnaceIconFront;
+        	return par1 == 1 ? this.iconTop : (par1 == 0 ? Blocks.iron_block.getBlockTextureFromSide(par1) : this.blockIcon);
         }
-        
 
+        @Override
         @SideOnly(Side.CLIENT)
-        public void registerIcons(IIconRegister par1IconRegister)
+        public void registerBlockIcons(IIconRegister par1IconRegister)
         {
-            this.blockIcon = par1IconRegister.registerIcon("poopmod:" + "toilet" + "_side");
-            this.iconTop = par1IconRegister.registerIcon("poopmod:" + "toilet" + "_top");
+            this.blockIcon =  Blocks.iron_block.getBlockTextureFromSide(0);
+            this.furnaceIconFront = par1IconRegister.registerIcon("poopmod:" + "toilet" + "_side");
+            this.furnaceIconTop = par1IconRegister.registerIcon("poopmod:" + "toilet" + "_top");
         }
+
+
 }

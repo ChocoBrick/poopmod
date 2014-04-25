@@ -41,20 +41,20 @@ public class PoopMod{
         @EventHandler
         public void preInit(FMLPreInitializationEvent event) {
         	ConfigManager.addConfigFile(event);
-            RecipeManager.addRecipes(event);
+            proxy.registerRenderers();
+            Registry.RegisterEntitys(event);
+            EnumManager.addEnumTypes(event);
+            MainBlocks.addBlocks(event);
+            MainItems.addItems(event);
+            Registry.RegisterItems(event);
+            Registry.RegisterBlocks(event);   
+            Registry.RegisterBlockHarvestlevel(event);
+            Achievments.addAchievments(event);
+            RecipeManager.addRecipes();
         }
         
         @EventHandler
         public void load(FMLInitializationEvent event) {
-                proxy.registerRenderers();
-                Registry.RegisterEntitys(event);
-                EnumManager.addEnumTypes(event);
-                MainBlocks.addBlocks(event);
-                MainItems.addItems(event);
-                Registry.RegisterItems(event);
-                Registry.RegisterBlocks(event);   
-                Registry.RegisterBlockHarvestlevel(event);
-                Achievments.addAchievments(event);
         }
         
         @EventHandler

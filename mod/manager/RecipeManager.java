@@ -4,12 +4,11 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import com.poopmod.mod.blocks.MainBlocks;
 import com.poopmod.mod.items.MainItems;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RecipeManager {
 
-	public static void addRecipes(FMLPreInitializationEvent event){
+	public static void addRecipes(){
 		
 		//Smelting
 		GameRegistry.addSmelting(MainItems.PoopItem, new ItemStack(MainItems.CleanPoopItem), 5f);

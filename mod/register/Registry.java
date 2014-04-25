@@ -10,12 +10,13 @@ import com.poopmod.mod.handler.SoundHandler;
 import com.poopmod.mod.items.MainItems;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Registry {
 
-	public static void RegisterEntitys(FMLInitializationEvent event){
+	public static void RegisterEntitys(FMLPreInitializationEvent event){
 
 		//Register Entity
         EntityRegistry.registerModEntity(EntityPoopball.class, "Poopball", 1, PoopMod.instance, 120, 3, true);
@@ -25,7 +26,7 @@ public class Registry {
     	MinecraftForge.EVENT_BUS.register(new SoundHandler());
 	}
 	
-	public static void RegisterBlocks(FMLInitializationEvent event){
+	public static void RegisterBlocks(FMLPreInitializationEvent event){
 		
 		GameRegistry.registerBlock(MainBlocks.toilet, MainBlocks.toilet.getUnlocalizedName());
         GameRegistry.registerBlock(MainBlocks.BlockPoop, MainBlocks.BlockPoop.getUnlocalizedName());
@@ -37,7 +38,16 @@ public class Registry {
         GameRegistry.registerBlock(MainBlocks.UltimatePoopBlock, MainBlocks.UltimatePoopBlock.getUnlocalizedName());
 	}
 	
-	public static void RegisterItems(FMLInitializationEvent event){
+	public static void RegisterItems(FMLPreInitializationEvent event){
+		
+		GameRegistry.registerItem(MainItems.ItemPoopball, MainItems.ItemPoopball.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.PoopItem, MainItems.PoopItem.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.CleanPoopItem, MainItems.CleanPoopItem.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.ItemBirdPoop, MainItems.ItemBirdPoop.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.ItemBirdPoopClean, MainItems.ItemBirdPoopClean.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.ItemManure, MainItems.ItemManure.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.ItemManureClean, MainItems.ItemManureClean.getUnlocalizedName());
+		GameRegistry.registerItem(MainItems.UltimatePoopIngot, MainItems.UltimatePoopIngot.getUnlocalizedName());
 		
 		GameRegistry.registerItem(MainItems.pickaxePoop, MainItems.pickaxePoop.getUnlocalizedName());
 		GameRegistry.registerItem(MainItems.axePoop, MainItems.axePoop.getUnlocalizedName());
@@ -64,7 +74,7 @@ public class Registry {
 		
 	}
 	
-	public static void RegisterBlockHarvestlevel(FMLInitializationEvent event){
+	public static void RegisterBlockHarvestlevel(FMLPreInitializationEvent event){
 		
 		MainBlocks.toilet.setHarvestLevel("pickaxe", 1);
 		MainBlocks.BlockPoop.setHarvestLevel("shovel", 1);

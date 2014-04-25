@@ -13,6 +13,7 @@ import com.poopmod.mod.tools.PoopSpade;
 import com.poopmod.mod.tools.PoopSword;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class MainItems {
 	
@@ -80,7 +81,7 @@ public class MainItems {
 	public static Item bootsUltimate;
     
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public static void addItems(FMLInitializationEvent event){
+	public static void addItems(FMLPreInitializationEvent event){
 		
 		ItemPoopball = new ItemPoopball(ConfigManager.PoopballId, 1, 1, true).setUnlocalizedName("poopball").setCreativeTab(PoopMod.poopytab).setTextureName("poopmod:poopball");
         PoopItem = new ItemPoop(ConfigManager.PoopId, 3, 1.2F, true).setAlwaysEdible().setUnlocalizedName("poopI").setCreativeTab(PoopMod.poopytab).setTextureName("poopmod:poop");
