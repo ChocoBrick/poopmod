@@ -15,6 +15,7 @@ import com.poopmod.mod.items.MainItems;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+
 public class BlockToilet extends Block
 {
 	@SideOnly(Side.CLIENT)
@@ -43,6 +44,8 @@ public class BlockToilet extends Block
         	if(world.isRemote){
         		return true;
         	}else{
+        		
+        		//BlockPistonBase
         		
         		@SuppressWarnings("unused")
 				int foodlvl = player.getFoodStats().getFoodLevel();
@@ -116,6 +119,7 @@ public class BlockToilet extends Block
         //front
         this.front = p_149651_1_.registerIcon("poopmod:" + "toilet" + "_side");
         }
+        
         
        
 
