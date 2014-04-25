@@ -186,7 +186,7 @@ public class PoopMod {
             int hoeManureId = configFile.get("Tool","Manure Hoe", 5034).getInt();
             
             int shovelUltimateId = configFile.get("Tool","Ultimate Poop Shovel", 5035).getInt();
-            int pickaxeUltimateId = configFile.getItem("Tool","Ultimate Poop Pickaxe", 5036).getInt();
+            int pickaxeUltimateId = configFile.get("Tool","Ultimate Poop Pickaxe", 5036).getInt();
             int axeUltimateId = configFile.get("Tool","Ultimate Poop Axe", 5037).getInt();
             int swordUltimateId = configFile.get("Tool","Ultimate Poop Sword", 5038).getInt();
             int hoeUltimateId = configFile.get("Tool","Ultimate Poop Hoe", 5039).getInt();
