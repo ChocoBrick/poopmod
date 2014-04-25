@@ -144,14 +144,14 @@ public class Anythinghonestly {
         	 isVulgar = configFile.get(Configuration.CATEGORY_GENERAL, "Use vulgar language?", false).getBoolean(false);
 
         	//blocks
-            int toiletId = configFile.get(Configuration.CATEGORY_BLOCK, "Toilet Block", 2460).getInt();
-            int BlockPoopId = configFile.get(Configuration.CATEGORY_BLOCK, "Poop Block", 2461).getInt();
-            int BlockPoopCleanId = configFile.get(Configuration.CATEGORY_BLOCK, "'Sanitized' Poop Block", 2462).getInt();
-            int BlockBirdPoopId = configFile.get(Configuration.CATEGORY_BLOCK, "Bird Poop Block", 2463).getInt();
-            int BlockBirdPoopCleanId = configFile.get(Configuration.CATEGORY_BLOCK, "'Sanitized' Bird Poop Block", 2464).getInt();
-            int BlockManureId = configFile.get(Configuration.CATEGORY_BLOCK, "Manure Block", 2465).getInt();
-            int BlockManureCleanId = configFile.get(Configuration.CATEGORY_BLOCK, "'Sanitized' Manure Block", 2466).getInt();
-            int UltimatePoopBlockId = configFile.get(Configuration.CATEGORY_BLOCK, "Ultimate Poop Block", 2467).getInt();
+            int toiletId = configFile.get("Block", "Toilet Block", 2460).getInt();
+            int BlockPoopId = configFile.get("Block", "Poop Block", 2461).getInt();
+            int BlockPoopCleanId = configFile.get("Block", "'Sanitized' Poop Block", 2462).getInt();
+            int BlockBirdPoopId = configFile.get("Block", "Bird Poop Block", 2463).getInt();
+            int BlockBirdPoopCleanId = configFile.get("Block", "'Sanitized' Bird Poop Block", 2464).getInt();
+            int BlockManureId = configFile.get("Block", "Manure Block", 2465).getInt();
+            int BlockManureCleanId = configFile.get("Block", "'Sanitized' Manure Block", 2466).getInt();
+            int UltimatePoopBlockId = configFile.get("Block", "Ultimate Poop Block", 2467).getInt();
             
             //poop items
             int PoopId = configFile.getItem("Poop", 5000).getInt();
