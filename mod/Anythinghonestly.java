@@ -20,6 +20,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.*;
 import net.minecraft.entity.Entity;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.Configuration;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
