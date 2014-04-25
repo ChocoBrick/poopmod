@@ -3,19 +3,17 @@ package com.poopmod.mod.armor;
 import java.util.List;
 
 import com.poopmod.mod.PoopMod;
+import com.poopmod.mod.items.MainItems;
 
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
 		public class PoopArmor extends ItemArmor {
-			public PoopArmor(int par1, EnumArmorMaterial par2EnumArmorMaterial,
-					int par3, int par4) {
-				super(par1, par2EnumArmorMaterial, par3, par4);
+			public PoopArmor(int par1, ArmorMaterial par2EnumArmorMaterial,int par3, int par4) {
+				super(par2EnumArmorMaterial, par3, par4);
 			}
 
 			
@@ -23,34 +21,34 @@ import net.minecraft.nbt.NBTTagCompound;
 	        {
 	        	
 	        		//poop
-	                if(stack == PoopMod.helmetPoop || stack == PoopMod.platePoop.itemID || stack == PoopMod.bootsPoop)
+	                if(stack == MainItems.helmetPoop.getContainerItem(stack) || stack == MainItems.platePoop.getContainerItem(stack) || stack == MainItems.bootsPoop.getContainerItem(stack))
 	                {
 	                        return "krebsmodid:textures/armor/POOP_layer_1.png";//1
 	                }
 	                
-	                if(stack.itemID == PoopMod.legsPoop.itemID)
+	                if(stack == MainItems.legsPoop.getContainerItem(stack))
 	                {
 	                        return "krebsmodid:textures/armor/POOP_layer_2.png";//2
 	                }
 	               
 	                //bird
-	                if(stack.itemID == PoopMod.helmetBirdPoop.itemID || stack.itemID == PoopMod.plateBirdPoop.itemID || stack.itemID == PoopMod.bootsBirdPoop.itemID)
+	                if(stack == MainItems.helmetBirdPoop.getContainerItem(stack) || stack == MainItems.plateBirdPoop.getContainerItem(stack) || stack == MainItems.bootsBirdPoop.getContainerItem(stack))
 	                {
 	                        return "krebsmodid:textures/armor/BIRDPOOP_layer_1.png";//1
 	                }
 	                
-	                if(stack.itemID == PoopMod.legsBirdPoop.itemID)
+	                if(stack == MainItems.legsBirdPoop.getContainerItem(stack))
 	                {
 	                        return "krebsmodid:textures/armor/BIRDPOOP_layer_2.png";//2
 	                }
 	                
 	                //cow
-	                if(stack.itemID == PoopMod.helmetManure.itemID || stack.itemID == PoopMod.plateManure.itemID || stack.itemID == PoopMod.bootsManure.itemID)
+	                if(stack == MainItems.helmetManure.getContainerItem(stack) || stack == MainItems.plateManure.getContainerItem(stack) || stack == MainItems.bootsManure.getContainerItem(stack))
 	                {
 	                        return "krebsmodid:textures/armor/COWPOOP_layer_1.png";//1
 	                }
 	                
-	                if(stack.itemID == PoopMod.legsManure.itemID)
+	                if(stack == MainItems.legsManure.getContainerItem(stack))
 	                {
 	                        return "krebsmodid:textures/armor/COWPOOP_layer_2.png";//2
 	                }
@@ -58,12 +56,12 @@ import net.minecraft.nbt.NBTTagCompound;
 
 	                //ultimate
 	                
-	                if(stack.itemID == PoopMod.helmetUltimate.itemID || stack.itemID == PoopMod.plateUltimate.itemID || stack.itemID == PoopMod.bootsUltimate.itemID)
+	                if(stack == MainItems.helmetUltimate.getContainerItem(stack) || stack == MainItems.plateUltimate.getContainerItem(stack) || stack == MainItems.bootsUltimate.getContainerItem(stack))
 	                {
 	                        return "krebsmodid:textures/armor/ULTIMATEPOOP_layer_1.png";//1
 	                }
 	                
-	                if(stack.itemID == PoopMod.legsUltimate.itemID)
+	                if(stack == MainItems.legsUltimate.getContainerItem(stack))
 	                {
 	                        return "krebsmodid:textures/armor/ULTIMATEPOOP_layer_2.png";//2
 	                }

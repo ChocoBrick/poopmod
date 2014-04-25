@@ -1,6 +1,7 @@
 package com.poopmod.mod.tools;
 
-import com.poopmod.mod.MainItems;
+import com.poopmod.mod.items.MainItems;
+
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

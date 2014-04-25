@@ -1,6 +1,7 @@
 package com.poopmod.mod.items;
 
-import com.krebs.mod.EntityPoopball;
+import com.poopmod.mod.PoopMod;
+import com.poopmod.mod.entity.EntityPoopball;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,9 +13,9 @@ public class ItemPoopball extends Item
 {
     public ItemPoopball(int par1, int i, float f, boolean b)
     {
-        super(par1);
+        super();
         this.maxStackSize = 16;
-        this.setCreativeTab(CreativeTabs.tabMisc);
+        this.setCreativeTab(PoopMod.poopytab);
     }
 
     /**

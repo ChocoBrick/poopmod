@@ -1,4 +1,7 @@
-package com.poopmod.mod;
+package com.poopmod.mod.handler;
+
+import com.poopmod.mod.PoopMod;
+import com.poopmod.mod.items.MainItems;
 
 import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.monster.EntityWitch;
@@ -11,7 +14,7 @@ import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 
-public class PoopDroping {
+public class PoopDropingHandler {
    public static double rand;
    
    public void onEntityDrop(LivingDropsEvent event) {
@@ -21,7 +24,7 @@ public class PoopDroping {
                             rand = Math.random();
                     //1D = 100%, .5D = 50%        
             if (rand < 0.2D) {
-               event.entityLiving.dropItem(PoopMod.ItemManure, 1);
+               event.entityLiving.dropItem(MainItems.ItemManure, 1);
             }
          }
          
@@ -30,7 +33,7 @@ public class PoopDroping {
              rand = Math.random();
      //1D = 100%, .5D = 50%        
              if (rand < 0.35D) {
-            	 event.entityLiving.dropItem(PoopMod.ItemBirdPoop, 1);
+            	 event.entityLiving.dropItem(MainItems.ItemBirdPoop, 1);
              }
          }
          
@@ -39,7 +42,7 @@ public class PoopDroping {
              rand = Math.random();
      //1D = 100%, .5D = 50%        
              if (rand < 0.2D) {
-            	 event.entityLiving.dropItem(PoopMod.PoopItem, 1);
+            	 event.entityLiving.dropItem(MainItems.PoopItem, 1);
              }
          }
          

@@ -1,9 +1,9 @@
-package com.poopmod.mod;
+package com.poopmod.mod.manager;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.config.Configuration;
 
-public class MainConfig {
+public class ConfigManager {
 	
     static String WordPoop = "Poop";
     static Boolean isVulgar;

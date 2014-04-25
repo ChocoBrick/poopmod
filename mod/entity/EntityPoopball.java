@@ -1,4 +1,4 @@
-package com.poopmod.mod;
+package com.poopmod.mod.entity;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityBlaze;

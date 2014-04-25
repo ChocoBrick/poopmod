@@ -1,4 +1,4 @@
-package com.poopmod.mod;
+package com.poopmod.mod.manager;
 
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;

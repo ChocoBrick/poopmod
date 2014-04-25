@@ -1,29 +1,27 @@
 package com.poopmod.mod.blocks;
 
-import java.util.List;
-
-import com.poopmod.mod.PoopMod;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
+
+import com.poopmod.mod.items.MainItems;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockToilet extends Block
 {
 	@SideOnly(Side.CLIENT)
     private IIcon iconTop;
 
-	 private final boolean powered;
+	 @SuppressWarnings("unused")
+	private final boolean powered;
 
         public BlockToilet (int id, Material material, boolean par2)
         {
@@ -44,16 +42,17 @@ public class BlockToilet extends Block
         		return true;
         	}else{
         		
-        		int foodlvl = player.getFoodStats().getFoodLevel();
+        		@SuppressWarnings("unused")
+				int foodlvl = player.getFoodStats().getFoodLevel();
         		if (player.getFoodStats().getFoodLevel() > 14){
 
         		
-        world.playSoundAtEntity(player, "krebsmodid:toilet", 1.0F, 1.0F);
+        world.playSoundAtEntity(player, "poopmod:toilet", 1.0F, 1.0F);
 
         int c = world.getBlockMetadata(i, j, k);
 
          world.setBlockMetadataWithNotify(i, j, k, 0, c);
-         dropItemStack(new ItemStack(PoopMod.PoopItem, 1), world, i, j, k);
+         dropItemStack(new ItemStack(MainItems.PoopItem, 1), world, i, j, k);
  		player.getFoodStats().addStats(-14 , 0.1F);
         		}
          return true;

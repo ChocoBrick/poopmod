@@ -1,4 +1,4 @@
-package com.poopmod.mod;
+package com.poopmod.mod.render;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -11,6 +11,8 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
+
+import com.poopmod.mod.entity.EntityPoopball;
 
 @SideOnly(Side.CLIENT)
 public class RenderPoopball extends Render

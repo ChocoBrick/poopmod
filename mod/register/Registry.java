@@ -2,10 +2,10 @@ package com.poopmod.mod.register;
 
 import net.minecraftforge.common.MinecraftForge;
 
-import com.poopmod.mod.EntityPoopball;
-import com.poopmod.mod.MainBlocks;
-import com.poopmod.mod.PoopDroping;
 import com.poopmod.mod.PoopMod;
+import com.poopmod.mod.blocks.MainBlocks;
+import com.poopmod.mod.entity.EntityPoopball;
+import com.poopmod.mod.handler.PoopDropingHandler;
 import com.poopmod.mod.handler.SoundHandler;
 
 import cpw.mods.fml.common.registry.EntityRegistry;
@@ -19,7 +19,7 @@ public class Registry {
         EntityRegistry.registerModEntity(EntityPoopball.class, "Poopball", 1, PoopMod.instance, 120, 3, true);
         
         //Register Events
-        MinecraftForge.EVENT_BUS.register(new PoopDroping());
+        MinecraftForge.EVENT_BUS.register(new PoopDropingHandler());
     	MinecraftForge.EVENT_BUS.register(new SoundHandler());
 	}
 	
