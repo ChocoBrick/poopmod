@@ -1,4 +1,4 @@
-package com.poopmod.mod.porxy;
+package com.poopmod.mod.proxy;
 
 public class CommonProxy {
         // Client stuff

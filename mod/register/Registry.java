@@ -9,12 +9,13 @@ import com.poopmod.mod.handler.PoopDropingHandler;
 import com.poopmod.mod.handler.SoundHandler;
 import com.poopmod.mod.items.MainItems;
 
+import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Registry {
 
-	public static void RegisterEntitys(){
+	public static void RegisterEntitys(FMLInitializationEvent event){
 
 		//Register Entity
         EntityRegistry.registerModEntity(EntityPoopball.class, "Poopball", 1, PoopMod.instance, 120, 3, true);
@@ -24,7 +25,7 @@ public class Registry {
     	MinecraftForge.EVENT_BUS.register(new SoundHandler());
 	}
 	
-	public static void RegisterBlocks(){
+	public static void RegisterBlocks(FMLInitializationEvent event){
 		
 		GameRegistry.registerBlock(MainBlocks.toilet, MainBlocks.toilet.getUnlocalizedName());
         GameRegistry.registerBlock(MainBlocks.BlockPoop, MainBlocks.BlockPoop.getUnlocalizedName());
@@ -36,7 +37,7 @@ public class Registry {
         GameRegistry.registerBlock(MainBlocks.UltimatePoopBlock, MainBlocks.UltimatePoopBlock.getUnlocalizedName());
 	}
 	
-	public static void RegisterItems(){
+	public static void RegisterItems(FMLInitializationEvent event){
 		
 		GameRegistry.registerItem(MainItems.pickaxePoop, MainItems.pickaxePoop.getUnlocalizedName());
 		GameRegistry.registerItem(MainItems.axePoop, MainItems.axePoop.getUnlocalizedName());
@@ -63,7 +64,8 @@ public class Registry {
 		
 	}
 	
-	public static void RegisterBlockHarvestlevel(){
+	public static void RegisterBlockHarvestlevel(FMLInitializationEvent event){
+		
 		MainBlocks.toilet.setHarvestLevel("pickaxe", 1);
 		MainBlocks.BlockPoop.setHarvestLevel("shovel", 1);
 		MainBlocks.BlockPoopClean.setHarvestLevel("shovel", 1);

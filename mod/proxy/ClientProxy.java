@@ -1,4 +1,4 @@
-package com.poopmod.mod.porxy;
+package com.poopmod.mod.proxy;
 
 import com.poopmod.mod.entity.EntityPoopball;
 import com.poopmod.mod.render.RenderPoopball;

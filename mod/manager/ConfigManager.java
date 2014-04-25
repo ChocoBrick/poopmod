@@ -73,9 +73,9 @@ public class ConfigManager {
     public static int legsUltimateId;
     public static int bootsUltimateId;
 	
-	public static void addConfigFile(){
+	public static void addConfigFile(FMLPreInitializationEvent event){
 
-		FMLPreInitializationEvent event = new FMLPreInitializationEvent();
+		//FMLPreInitializationEvent event = new FMLPreInitializationEvent();
 		
 		Configuration configFile = new Configuration(event.getSuggestedConfigurationFile());
 

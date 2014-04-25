@@ -11,7 +11,7 @@ import com.poopmod.mod.main.PoopyTab;
 import com.poopmod.mod.manager.ConfigManager;
 import com.poopmod.mod.manager.EnumManager;
 import com.poopmod.mod.manager.RecipeManager;
-import com.poopmod.mod.porxy.CommonProxy;
+import com.poopmod.mod.proxy.CommonProxy;
 import com.poopmod.mod.register.Registry;
 import com.poopmod.mod.render.RenderPoopball;
 import cpw.mods.fml.common.Mod;
@@ -31,7 +31,7 @@ public class PoopMod{
         @Instance(value = "poopmod")
         public static PoopMod instance;
 
-        @SidedProxy(clientSide="com.krebs.mod.ClientProxy", serverSide="com.krebs.mod.CommonProxy")
+        @SidedProxy(clientSide="com.poopmod.mod.proxy.ClientProxy", serverSide="com.poopmod.mod.proxy.CommonProxy")
         public static CommonProxy proxy;
 
         public static CreativeTabs poopytab = new PoopyTab("poopytab");
@@ -40,21 +40,21 @@ public class PoopMod{
 
         @EventHandler
         public void preInit(FMLPreInitializationEvent event) {
-        	ConfigManager.addConfigFile();
+        	ConfigManager.addConfigFile(event);
+            RecipeManager.addRecipes(event);
         }
         
         @EventHandler
         public void load(FMLInitializationEvent event) {
                 proxy.registerRenderers();
-                RecipeManager.addRecipes();
-                Registry.RegisterEntitys();
-                EnumManager.addEnumTypes();
-                MainBlocks.addBlocks();
-                MainItems.addItems();
-                Registry.RegisterItems();
-                Registry.RegisterBlocks();   
-                Registry.RegisterBlockHarvestlevel();
-                Achievments.addAchievments();
+                Registry.RegisterEntitys(event);
+                EnumManager.addEnumTypes(event);
+                MainBlocks.addBlocks(event);
+                MainItems.addItems(event);
+                Registry.RegisterItems(event);
+                Registry.RegisterBlocks(event);   
+                Registry.RegisterBlockHarvestlevel(event);
+                Achievments.addAchievments(event);
         }
         
         @EventHandler

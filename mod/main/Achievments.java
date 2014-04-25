@@ -4,13 +4,15 @@ import net.minecraft.stats.Achievement;
 import net.minecraft.stats.AchievementList;
 import com.poopmod.mod.items.MainItems;
 
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+
 
 public class Achievments {
 
 	public static Achievement eatShitAchieve;
 	public static Achievement eatCleanShitAchieve;
 	
-	public static void addAchievments(){
+	public static void addAchievments(FMLInitializationEvent event){
 		
 	 eatShitAchieve = new Achievement("eatShitAchieve", "eatShitAchieve", 1, -6, MainItems.PoopItem, AchievementList.buildWorkBench).registerStat();
    	 eatCleanShitAchieve = new Achievement("eatCleanShitAchieve", "eatCleanShitAchieve",-1, -6, MainItems.CleanPoopItem, eatShitAchieve).registerStat();

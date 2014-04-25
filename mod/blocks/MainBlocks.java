@@ -6,6 +6,8 @@ import net.minecraft.block.material.Material;
 import com.poopmod.mod.PoopMod;
 import com.poopmod.mod.manager.ConfigManager;
 
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+
 public class MainBlocks {
 	
     public static Block toilet;
@@ -17,7 +19,7 @@ public class MainBlocks {
     public static Block BlockManureClean;
     public static Block UltimatePoopBlock;
     
-	public static void addBlocks(){
+	public static void addBlocks(FMLInitializationEvent event){
 		
 		toilet = new BlockToilet(ConfigManager.toiletId, Material.iron, false).setStepSound(Block.soundTypeMetal).setBlockName("toilet").setCreativeTab(PoopMod.poopytab);
         BlockPoop = new BlockPoop(ConfigManager.BlockPoopId, Material.ground).setStepSound(Block.soundTypeSand).setBlockName("poopblock").setCreativeTab(PoopMod.poopytab).setBlockTextureName("poopmod:poopblock");
