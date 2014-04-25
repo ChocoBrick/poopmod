@@ -18,7 +18,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockToilet extends Block
 {
 	@SideOnly(Side.CLIENT)
-    private IIcon iconTop;
+	private IIcon top;
+	@SideOnly(Side.CLIENT)
+	private IIcon front;
 
 	 @SuppressWarnings("unused")
 	private final boolean powered;
@@ -99,25 +101,22 @@ public class BlockToilet extends Block
         }
         
         @SideOnly(Side.CLIENT)
-        private IIcon furnaceIconTop;
-        @SideOnly(Side.CLIENT)
-        private IIcon furnaceIconFront;
-
-        @Override
-        public IIcon getIcon(int par1, int par2)
+        public IIcon getIcon(int side, int p_149691_2_)
         {
-        	if (par2 == 0 && par1 == 3)return furnaceIconFront;
-        	return par1 == 1 ? this.iconTop : (par1 == 0 ? Blocks.iron_block.getBlockTextureFromSide(par1) : this.blockIcon);
+        return side == 1 ? this.top : (side == 2 ? this.front : this.blockIcon);
         }
-
-        @Override
+        
         @SideOnly(Side.CLIENT)
-        public void registerBlockIcons(IIconRegister par1IconRegister)
+        public void registerBlockIcons(IIconRegister p_149651_1_)
         {
-            this.blockIcon =  Blocks.iron_block.getBlockTextureFromSide(0);
-            this.furnaceIconFront = par1IconRegister.registerIcon("poopmod:" + "toilet" + "_side");
-            this.furnaceIconTop = par1IconRegister.registerIcon("poopmod:" + "toilet" + "_top");
+        //side
+        this.blockIcon = Blocks.iron_block.getBlockTextureFromSide(0);
+        //top
+        this.top = p_149651_1_.registerIcon("poopmod:" + "toilet" + "_top");
+        //front
+        this.front = p_149651_1_.registerIcon("poopmod:" + "toilet" + "_side");
         }
-
+        
+       
 
 }
