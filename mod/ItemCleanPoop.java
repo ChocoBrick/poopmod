@@ -22,7 +22,7 @@ public class ItemCleanPoop extends ItemFood {
             super.onFoodEaten(par1ItemStack, par2World, par3EntityPlayer);
             if (!par2World.isRemote)
             {
-            	par3EntityPlayer.addStat(Anythinghonestly.eatCleanShitAchieve, 1);
+            	par3EntityPlayer.addStat(PoopMod.eatCleanShitAchieve, 1);
             }
         }
 }

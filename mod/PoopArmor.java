@@ -21,34 +21,34 @@ import net.minecraft.nbt.NBTTagCompound;
 	        {
 	        	
 	        		//poop
-	                if(stack.itemID == Anythinghonestly.helmetPoop.itemID || stack.itemID == Anythinghonestly.platePoop.itemID || stack.itemID == Anythinghonestly.bootsPoop.itemID)
+	                if(stack.itemID == PoopMod.helmetPoop.itemID || stack.itemID == PoopMod.platePoop.itemID || stack.itemID == PoopMod.bootsPoop.itemID)
 	                {
 	                        return "krebsmodid:textures/armor/POOP_layer_1.png";//1
 	                }
 	                
-	                if(stack.itemID == Anythinghonestly.legsPoop.itemID)
+	                if(stack.itemID == PoopMod.legsPoop.itemID)
 	                {
 	                        return "krebsmodid:textures/armor/POOP_layer_2.png";//2
 	                }
 	               
 	                //bird
-	                if(stack.itemID == Anythinghonestly.helmetBirdPoop.itemID || stack.itemID == Anythinghonestly.plateBirdPoop.itemID || stack.itemID == Anythinghonestly.bootsBirdPoop.itemID)
+	                if(stack.itemID == PoopMod.helmetBirdPoop.itemID || stack.itemID == PoopMod.plateBirdPoop.itemID || stack.itemID == PoopMod.bootsBirdPoop.itemID)
 	                {
 	                        return "krebsmodid:textures/armor/BIRDPOOP_layer_1.png";//1
 	                }
 	                
-	                if(stack.itemID == Anythinghonestly.legsBirdPoop.itemID)
+	                if(stack.itemID == PoopMod.legsBirdPoop.itemID)
 	                {
 	                        return "krebsmodid:textures/armor/BIRDPOOP_layer_2.png";//2
 	                }
 	                
 	                //cow
-	                if(stack.itemID == Anythinghonestly.helmetManure.itemID || stack.itemID == Anythinghonestly.plateManure.itemID || stack.itemID == Anythinghonestly.bootsManure.itemID)
+	                if(stack.itemID == PoopMod.helmetManure.itemID || stack.itemID == PoopMod.plateManure.itemID || stack.itemID == PoopMod.bootsManure.itemID)
 	                {
 	                        return "krebsmodid:textures/armor/COWPOOP_layer_1.png";//1
 	                }
 	                
-	                if(stack.itemID == Anythinghonestly.legsManure.itemID)
+	                if(stack.itemID == PoopMod.legsManure.itemID)
 	                {
 	                        return "krebsmodid:textures/armor/COWPOOP_layer_2.png";//2
 	                }
@@ -56,12 +56,12 @@ import net.minecraft.nbt.NBTTagCompound;
 
 	                //ultimate
 	                
-	                if(stack.itemID == Anythinghonestly.helmetUltimate.itemID || stack.itemID == Anythinghonestly.plateUltimate.itemID || stack.itemID == Anythinghonestly.bootsUltimate.itemID)
+	                if(stack.itemID == PoopMod.helmetUltimate.itemID || stack.itemID == PoopMod.plateUltimate.itemID || stack.itemID == PoopMod.bootsUltimate.itemID)
 	                {
 	                        return "krebsmodid:textures/armor/ULTIMATEPOOP_layer_1.png";//1
 	                }
 	                
-	                if(stack.itemID == Anythinghonestly.legsUltimate.itemID)
+	                if(stack.itemID == PoopMod.legsUltimate.itemID)
 	                {
 	                        return "krebsmodid:textures/armor/ULTIMATEPOOP_layer_2.png";//2
 	                }

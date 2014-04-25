@@ -23,7 +23,7 @@ public class PoopDroping {
                             rand = Math.random();
                     //1D = 100%, .5D = 50%        
             if (rand < 0.2D) {
-               event.entityLiving.dropItem(Anythinghonestly.ItemManure.itemID, 1);
+               event.entityLiving.dropItem(PoopMod.ItemManure.itemID, 1);
             }
          }
          
@@ -32,7 +32,7 @@ public class PoopDroping {
              rand = Math.random();
      //1D = 100%, .5D = 50%        
              if (rand < 0.35D) {
-            	 event.entityLiving.dropItem(Anythinghonestly.ItemBirdPoop.itemID, 1);
+            	 event.entityLiving.dropItem(PoopMod.ItemBirdPoop.itemID, 1);
              }
          }
          
@@ -41,7 +41,7 @@ public class PoopDroping {
              rand = Math.random();
      //1D = 100%, .5D = 50%        
              if (rand < 0.2D) {
-            	 event.entityLiving.dropItem(Anythinghonestly.PoopItem.itemID, 1);
+            	 event.entityLiving.dropItem(PoopMod.PoopItem.itemID, 1);
              }
          }
          

@@ -67,13 +67,13 @@ public class PoopHoe extends Item
                 }
                 else
                 {
-                	if(this != Anythinghonestly.hoeUltimate){
+                	if(this != PoopMod.hoeUltimate){
                 		if(rand < 0.55D){
                 			par3World.setBlock(par4, par5, par6, Block.tilledField.blockID, 1, 1);
                 		}else{
                 			par3World.setBlock(par4, par5, par6, block.blockID);
                 			}
-                				}else if(this == Anythinghonestly.hoeUltimate){
+                				}else if(this == PoopMod.hoeUltimate){
                 					par3World.setBlock(par4, par5, par6, Block.tilledField.blockID, 1, 1);	
                 				}
                     				par1ItemStack.damageItem(1, par2EntityPlayer);

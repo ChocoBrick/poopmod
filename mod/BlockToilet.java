@@ -50,7 +50,7 @@ public class BlockToilet extends Block
         int c = world.getBlockMetadata(i, j, k);
 
          world.setBlockMetadataWithNotify(i, j, k, 0, c);
-         dropItemStack(new ItemStack(Anythinghonestly.PoopItem, 1), world, i, j, k);
+         dropItemStack(new ItemStack(PoopMod.PoopItem, 1), world, i, j, k);
  		player.getFoodStats().addStats(-14 , 0.1F);
         		}
          return true;
