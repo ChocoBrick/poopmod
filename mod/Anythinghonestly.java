@@ -34,7 +34,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-@Mod(modid="poopmod", name="PoopCraft", version="1.0.0")
+@Mod(modid="poopmod", name="PoopCraft", version="1.0.0") 
 public class Anythinghonestly {
         @Instance(value = "KrebsModID")
         public static Anythinghonestly instance;
