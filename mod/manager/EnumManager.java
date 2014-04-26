@@ -1,10 +1,9 @@
 package com.poopmod.mod.manager;
 
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class EnumManager {
 	

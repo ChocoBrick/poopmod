@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
+import com.poopmod.mod.handler.SoundHandler;
 import com.poopmod.mod.items.MainItems;
 
 import cpw.mods.fml.relauncher.Side;
@@ -52,7 +53,7 @@ public class BlockToilet extends Block
         		if (player.getFoodStats().getFoodLevel() > 14){
 
         		
-        world.playSoundAtEntity(player, "poopmod:toilet", 1.0F, 1.0F);
+        			SoundHandler.onEntityPlay("toilet", player.worldObj, player, 1, 1);
 
         int c = world.getBlockMetadata(i, j, k);
 

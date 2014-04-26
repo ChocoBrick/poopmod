@@ -2,9 +2,9 @@ package com.poopmod.mod.main;
 
 import net.minecraft.stats.Achievement;
 import net.minecraft.stats.AchievementList;
+
 import com.poopmod.mod.items.MainItems;
 
-import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 

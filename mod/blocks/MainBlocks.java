@@ -6,7 +6,6 @@ import net.minecraft.block.material.Material;
 import com.poopmod.mod.PoopMod;
 import com.poopmod.mod.manager.ConfigManager;
 
-import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class MainBlocks {
